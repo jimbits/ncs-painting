@@ -9,7 +9,7 @@ interface HeroProps {
 function Hero({ className }: HeroProps) {
   return (
     <header className="responsive">
-      <div className="relative overflow-hidden bg-[url('https://res.cloudinary.com/jimbits/image/upload/c_scale,w_1440/v1756580726/ncs-painting-edmonton/house-at-night_xalhqy.png')] bg-cover bg-position-[-375px_0px] bg-no-repeat sm:bg-bottom-left">
+      <div className="relative overflow-hidden bg-[url('https://res.cloudinary.com/jimbits/image/upload/c_scale,e_blur:80,f_auto,h_300,q_auto:low/v1756587567/ncs-painting-edmonton/test_r6gspp.jpg')] bg-cover bg-position-[-375px_0px] bg-no-repeat sm:bg-bottom-left">
         {/* Overlay Gradient */}
         {/* <div className="absolute inset-0 bg-gradient-to-r from-pink-800/50 to-pink-700/15" /> */}
 
