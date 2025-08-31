@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+        <head>
+                <meta charset="UTF-8" />
+                <link rel="icon"
+                      type="image/svg+xml"
+                      href="/vite.svg" />
+
+                <meta name="viewport"
+                      content="width=device-width, initial-scale=1.0" />
+                <title>Vite + TS</title>
+                <link rel="stylesheet"
+                      href="/src/css/style.css">
+
+        </head>
+
+        <body class="bg-gray-300">
+                <section class="hero-section">
+                        <div class=" ">
+
+
+                                <!-- JPEG fallback -->
+                                <img src="https://res.cloudinary.com/jimbits/image/upload/c_fill,f_avif,ar_4:3,w_250,q_auto:good/v1755895320/ncs-painting-edmonton/south-edmoton-house-repainted"
+                                     alt="Painting project gallery image"
+                                     class=" w-full h-72 sm:w-[600px] object-cover object-center rounded-lg shadow-md "
+                                     loading="lazy  ">
+
+                        </div>
+
+
+                </section>
+
+        </body>
+
+        <script>
+                const observer = new PerformanceObserver((list) => {
+                        list.getEntries().forEach((entry) => {
+                                if (entry.name.includes('cloudinary')) {
+                                        console.log(`Image loaded in: ${entry.duration}ms`);
+                                }
+                        });
+                });
+                observer.observe({ entryTypes: ['resource'] });
+        </script>
+
+</html>
