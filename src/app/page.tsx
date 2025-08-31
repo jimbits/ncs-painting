@@ -9,7 +9,7 @@ import Reviews from "@/components/page/Reviews";
 export default function Home() {
   return (
     <>
-      <AppBar className="bg-zinc-50 px-4 pt-2 pb-5 shadow" />
+      <AppBar className="bg-zinc-500 px-4 pt-2 pb-5 shadow sm:bg-red-500 md:bg-green-500 lg:bg-violet-500 xl:bg-pink-500" />
       {/* <div className="relative h-[600px] bg-[url('https://res.cloudinary.com/jimbits/image/upload/c_scale,w_1440/v1756580726/ncs-painting-edmonton/house-at-night_xalhqy.png')] bg-cover bg-right bg-no-repeat before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-500/50 before:to-red-500/35"></div> */}
 
       <Hero />
