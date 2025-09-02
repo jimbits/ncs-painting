@@ -2,12 +2,12 @@ import { Button } from "@/components/button";
 
 export default function Preview() {
   return (
-    <section className="m-auto grid w-full grid-flow-row flex-wrap items-center gap-x-0 gap-y-6 bg-gray-900 px-3 py-6 text-center sm:px-8 md:gap-x-28 md:py-16 lg:grid-cols-2 lg:px-16 lg:text-start xl:px-32">
-      <div className="flex w-full max-w-2xl items-center justify-center justify-self-center rounded-2xl bg-white p-2 lg:justify-self-end">
+    <section className="m-auto grid w-full grid-flow-row flex-wrap items-center gap-x-0 gap-y-6 bg-gray-900 px-3 py-6 text-center sm:px-8 md:gap-x-28 md:py-16 lg:grid-cols-2 lg:text-start xl:px-32">
+      <div className="flex items-center justify-center justify-self-center rounded-2xl bg-white p-2 lg:justify-self-end">
         <img
-          src="https://res.cloudinary.com/jimbits/image/upload/v1756737706/ncs-painting-edmonton/about-us/ncs-painting-61_tk5m0e.png"
-          alt=""
-          className="h-[500px] w-full object-cover object-left"
+          src="https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,q_60,w_600/v1756827782/ncs-painting-edmonton/about-us/living-room-being-painted-red.png"
+          alt="adding the finishing touches,baseboard being painted white"
+          className="h-[500px] object-cover object-right"
         />
       </div>
       {/* RIGHT COLUMN */}

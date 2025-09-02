@@ -70,8 +70,8 @@ export default function AboutUs() {
               <div className="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:-mt-40 dark:shadow-none">
                 <picture>
                   <img
-                    alt="couple selecting colours while painters get to work"
-                    src="https://res.cloudinary.com/jimbits/image/upload/v1756742517/ncs-painting-edmonton/about-us/red-room_nlfwyk.png"
+                    alt="room being painted red with ladder red paint, roller and brush at the centerof the room on the floor"
+                    src="https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,q_60,w_500/v1756827782/ncs-painting-edmonton/about-us/living-room-being-painted-red"
                     className="block size-full object-cover object-bottom"
                   />
                 </picture>

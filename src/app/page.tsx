@@ -1,10 +1,7 @@
-import Services from "@/components/page/Services";
 import Hero from "@/components/page/Hero";
-
 import AppBar from "@/components/page/AppBar";
 import OurServices from "@/components/page/OurServices";
 import AboutUs from "@/components/page/AboutUs";
-import Test from "@/components/page/Testing";
 import Reviews from "@/components/page/Reviews";
 import Preview from "@/components/page/Preview";
 
@@ -14,7 +11,7 @@ export default function Home() {
   return (
     <div className="h-full overflow-y-auto">
       <AppBar />
-      <Test />
+      <Hero />
       <main className="">
         <AboutUs />
         <OurServices />
