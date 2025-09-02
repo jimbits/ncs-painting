@@ -9,7 +9,7 @@ interface HeroProps {
 function Hero({ className }: HeroProps) {
   return (
     <header className="responsive">
-      <div className="relative overflow-hidden bg-[url('https://res.cloudinary.com/jimbits/image/upload/c_scale,e_blur:80,f_auto,h_300,q_auto:low/v1756587567/ncs-painting-edmonton/test_r6gspp.jpg')] bg-cover bg-position-[-375px_0px] bg-no-repeat sm:bg-bottom-left">
+      <div className="relative overflow-hidden bg-[url('https://res.cloudinary.com/jimbits/image/upload/v1756580859/ncs-painting-edmonton/brown-house_djnb6y.png')] bg-cover bg-position-[-375px_0px] bg-no-repeat sm:bg-bottom-left">
         {/* Overlay Gradient */}
         {/* <div className="absolute inset-0 bg-gradient-to-r from-pink-800/50 to-pink-700/15" /> */}
 
@@ -26,7 +26,7 @@ function Hero({ className }: HeroProps) {
                 </span>
               </h1>
             </div>
-            <p className="mx-4 my-4 max-w-xl bg-indigo-950 px-4 py-6 text-center text-base/snug font-medium text-white sm:my-10 sm:text-lg sm:font-bold md:mx-auto md:my-4 lg:mx-0 lg:my-8 lg:max-w-2xl lg:text-left lg:text-xl lg:text-white/80">
+            <p className="mx-4 my-4 max-w-xl bg-white/600 px-4 py-6 text-center text-base/snug font-medium text-zinc-900 sm:my-10 sm:text-lg sm:font-bold md:mx-auto md:my-4 lg:mx-0 lg:my-8 lg:max-w-2xl lg:text-left lg:text-xl lg:text-zinc-900/80">
               NCS Painting specializes exclusively in residential home painting.
               We are dedicated to providing quality premium materials that
               protect your home inside and out.
@@ -54,18 +54,21 @@ function Hero({ className }: HeroProps) {
               </button>
             </div>
           </div>
-          <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-purple-950/40 from-60% to-purple-900/15" />
+          <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-black/20 from-60% to-black/55" />
         </div>
       </div>
 
       {/* SERVICE AREA */}
-      <div className="flex h-[calc(15svh-30px)] flex-col items-center justify-center bg-indigo-950 pt-2 pb-4">
+      <div className="flex h-[calc(10svh-30px)] flex-col items-center justify-center bg-zinc-900 py-4 pt-2">
         <h2 className="text-center text-xl font-extrabold text-white">
           Service Area
-          <span className="flex justify-center gap-1.5 text-xs opacity-85">
+          <span className="flex justify-center gap-1.5 text-xs opacity-85 sm:gap-2 sm:text-base">
             <span>Edmonton </span>
+            <span>-</span>
             <span>Sherwood Park</span>
+            <span>-</span>
             <span>Fort Saskatchewan</span>
+            <span>-</span>
 
             <span>St Albert</span>
           </span>

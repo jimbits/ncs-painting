@@ -1,0 +1,9 @@
+```jsx
+   <div className="flex h-screen w-full flex-col bg-pink-300"></div>  
+      <div className="relative h-[600px] bg-[url('https://res.cloudinary.com/jimbits/image/upload/c_scale,w_1440/v1756580726/ncs-painting-edmonton/house-at-night_xalhqy.png')] bg-cover bg-right bg-no-repeat before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-500/50 before:to-red-500/35"></div> 
+
+       <Hero /> 
+
+       <WhyChooseUs />  
+       <Reviews />  
+```

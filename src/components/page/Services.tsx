@@ -4,20 +4,20 @@ function Services() {
   return (
     <section className="body-font text-gray-600">
       <div className="container mx-auto px-5 py-24">
-        <header className="mb-20">
-          <h2 className="mb-2 text-center text-3xl font-bold text-zinc-700">
-            Our Edmonton Home Painting Services
+        <header className="max-w-4xl">
+          <p className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">
+            About NCS Painting
+          </p>
+          <h2 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
+            Our Residential Painting Services
           </h2>
-
-          <p className="text-gray-500s mx-auto text-center text-base leading-relaxed lg:w-3/4 xl:w-2/4">
+          <p className="mt-6 text-xl/8 text-balance text-gray-700 dark:text-gray-300">
             Professional interior and exterior home painting services for
             Edmonton residents, delivering quality craftsmanship with guaranteed
             results every time.
           </p>
-          <div className="mt-6 flex justify-center">
-            <div className="inline-flex h-1 w-16 rounded-full bg-indigo-500"></div>
-          </div>
         </header>
+
         <div className="-mx-4 -mt-4 -mb-10 flex flex-wrap space-y-6 sm:-m-4 md:space-y-0">
           {/* Inerior House Painting */}
           <div className="flex max-w-[500px] flex-col items-center p-4 text-center sm:text-left">

@@ -78,9 +78,9 @@ export default function Home() {
       <main>
         <Services />
         <WhyChooseUs />
+        <Preview />
+        <Reviews />
       </main>
-      {/* <Preview />
-        <Reviews /> */}
     </>
   );
 }

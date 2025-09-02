@@ -9,16 +9,16 @@ interface AppBarProps {
 
 function AppBar({ className }: AppBarProps) {
   return (
-    <div className={cn("", className)}>
+    <div className={cn("px-2 py-3", className)}>
       <ul className={cn("flex items-center justify-between")}>
         <li className=" ">
-          <RollOnIcon className="w-10 fill-slate-900" />
+          <RollOnIcon className="w-12 fill-slate-900" />
         </li>
 
         <li className="">
-          <Menu className="text-slate-900 lg:hidden" />
+          <Menu className="h-10 w-10 text-slate-900 lg:hidden" />
           <figure className="group hidden select-none lg:flex lg:flex-col lg:items-center">
-            <User2Icon className="group-hover:stroke-slate-900" />
+            <User2Icon className="w-6 group-hover:stroke-slate-900" />
             <figcaption className="text-xs group-hover:text-indigo-600">
               customer login
             </figcaption>

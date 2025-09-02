@@ -1,28 +1,18 @@
-# Roll On Painting
-
-- Roll On Painting is a residential and commercial interior and exterior painting company servicing
-  Edmonton and the surrounding communities of Sherwood Park, St Albert, Fort Saskatchewan, Spruce
-  Grove, Beaumont and Stony Plain.
-
- 
-
-
-
 ## Service Focus
-
-Roll on painting specializes in interior and exterior home painting services. a professional painting company
+NCS Painting specializes it most of the most common services a professional painting company
 might offer. We focus on:
 
-- residential interiors.
-- residential exteriors.
-- new construction.
-- resteraunts.
-- cabinet refinishing.
-- Drywall Repair.
-- Popcorn Ceilings Removal.
-- Wallpaper Removal.
-- Power Washing.
-- Eco Friendly Paint Products.
+- residential interior and exterior painting,
+- metal roofs and buildings,
+- metal work.
+- decks and fences
+- garages
+- cabinet refinishing
+- Drywall Repair
+- Popcorn Ceilings Removal
+- Wallpaper Removal
+- Power Washing
+- Eco Friendly Paint Products
 
 ## Target Audience
 
@@ -60,8 +50,8 @@ weight for each area. However Edmonton at this time is the priority.
 
 ## Business Stage:
 
-We are rebranding from NCS Painting to Roll On Painting so we need a stratagy to let customers and
+We are rebranding from NCS Painting to  NCS Painting so we need a stratagy to let customers and
 potential customers that we have been in business for 15 years. We need a stratagy to deal with our
 reviews that are for NCS Painting on Google Home Stars etc. We need a stratagy for our Google
-Business Profile to match NCS painting to Roll On Painting Edmonton. We are launching soon and we do
+Business Profile to match NCS painting to  NCS Painting Edmonton. We are launching soon and we do
 need to rank quickly for immediate lead generation?
