@@ -13,7 +13,7 @@ import Preview from "@/components/page/Preview";
 export default function Home() {
   return (
     <div className="h-full overflow-y-auto">
-      <AppBar className="responsive" />
+      <AppBar />
       <Test />
       <main className="">
         <AboutUs />
