@@ -73,6 +73,8 @@ export default function AboutUs() {
                     alt="room being painted red with ladder red paint, roller and brush at the centerof the room on the floor"
                     src="https://res.cloudinary.com/jimbits/image/upload/c_limit,f_auto,q_40,w_300/v1756827782/ncs-painting-edmonton/about-us/living-room-being-painted-red.png"
                     className="block size-full object-cover object-bottom"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </picture>
               </div>
@@ -82,6 +84,8 @@ export default function AboutUs() {
                     alt="Exterior home painted by NCS painting in southwest Edmoton"
                     src="https://res.cloudinary.com/jimbits/image/upload/c_limit,f_auto,q_40,w_300/v1756737699/ncs-painting-edmonton/about-us/ncs-painting-41_um0p15.jpg"
                     className="block size-full object-cover object-center"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </picture>
               </div>
@@ -91,6 +95,8 @@ export default function AboutUs() {
                     alt=""
                     src="https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,q_40,w_300/v1756761499/ncs-painting-edmonton/about-us/nial-owner-ncs-painting.webp"
                     className="block size-full object-cover object-center"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </picture>
               </div>

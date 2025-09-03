@@ -6,9 +6,9 @@ interface ResponsiveImageProps {
   className?: string;
   quality?: number | "auto";
   format?: "auto" | "jpg" | "png" | "webp" | "avif";
-  loading?: "lazy" | "eager" | "auto";
-  decoding?: "sync" | "async" | "auto";
-  fetchPriority?: "high" | "low" | "auto";
+  loading?: "lazy" | "eager";
+  decoding?: "sync" | "async";
+  fetchPriority?: "high" | "low";
 }
 const ResponsiveImage = ({
   publicId,
