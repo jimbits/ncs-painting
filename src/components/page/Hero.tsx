@@ -21,6 +21,8 @@ function Test({ className }: TestProps) {
               alt="test the water"
               className="min-h-[calc(100dvh_-_64px)] object-cover md:w-full lg:min-h-[650px]"
               loading="eager"
+              fetchPriority="high"
+              decoding="async"
             />
           </picture>
         </div>

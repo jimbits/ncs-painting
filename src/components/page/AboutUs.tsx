@@ -75,6 +75,7 @@ export default function AboutUs() {
                     className="block size-full object-cover object-bottom"
                     loading="lazy"
                     decoding="async"
+                    fetchPriority="low"
                   />
                 </picture>
               </div>
@@ -86,6 +87,7 @@ export default function AboutUs() {
                     className="block size-full object-cover object-center"
                     loading="lazy"
                     decoding="async"
+                    fetchPriority="low"
                   />
                 </picture>
               </div>
@@ -97,6 +99,7 @@ export default function AboutUs() {
                     className="block size-full object-cover object-center"
                     loading="lazy"
                     decoding="async"
+                    fetchPriority="low"
                   />
                 </picture>
               </div>

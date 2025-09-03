@@ -8,6 +8,9 @@ export default function Preview() {
           src="https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,q_20,w_450/v1756827782/ncs-painting-edmonton/about-us/living-room-being-painted-red.png"
           alt="adding the finishing touches,baseboard being painted white"
           className="h-[450px] object-cover object-right"
+          loading="lazy"
+          decoding="async"
+          fetchPriority="low"
         />
       </div>
       {/* RIGHT COLUMN */}
