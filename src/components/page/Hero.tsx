@@ -10,16 +10,22 @@ function Test({ className }: TestProps) {
   return (
     <header
       className={cn(
-        "relative flex min-h-[calc(100dvh_-_64px)] flex-col justify-between overflow-y-hidden"
+        "md:h relative flex min-h-[calc(100dvh_-_64px)] flex-col justify-between overflow-y-hidden md:h-[600px]"
       )}
     >
       <div>
         <div className="absolute inset-0">
           <picture>
+            <source
+              media="(min-width: 1024px)"
+              srcSet="https://res.cloudinary.com/jimbits/image/upload/c_fill,f_auto,q_30,w_1440,h_650/v1756580859/ncs-painting-edmonton/landing/ncs-painting-edmoton-house-painting.png"
+            />
             <img
-              src="https://res.cloudinary.com/jimbits/image/upload/c_fill,f_auto,q_20,w_500/v1756580859/ncs-painting-edmonton/landing/ncs-painting-edmoton-house-painting.png"
-              alt="test the water"
-              className="min-h-[calc(100dvh_-_64px)] object-cover md:w-full lg:min-h-[650px]"
+              src="https://res.cloudinary.com/jimbits/image/upload/c_fill,f_auto,q_auto,w_768,h_1024/v1756580859/ncs-painting-edmonton/landing/ncs-painting-edmoton-house-painting.png"
+              alt="NCS Painting Edmonton house painting services"
+              width="768"
+              height="1024"
+              className="h-[calc(100dvh-64px)] w-full object-cover"
               loading="eager"
               fetchPriority="high"
               decoding="async"

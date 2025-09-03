@@ -4,14 +4,24 @@ export default function Preview() {
   return (
     <section className="m-auto grid w-full grid-flow-row flex-wrap items-center gap-x-0 gap-y-6 bg-gray-900 px-3 py-6 text-center sm:px-8 md:gap-x-28 md:py-16 lg:grid-cols-2 lg:text-start xl:px-48 xl:py-28">
       <div className="flex items-center justify-center justify-self-center rounded-2xl bg-white p-2 lg:justify-self-end">
-        <img
-          src="https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,q_20,w_450/v1756827782/ncs-painting-edmonton/about-us/living-room-being-painted-red.png"
-          alt="adding the finishing touches,baseboard being painted white"
-          className="h-[450px] object-cover object-right"
-          loading="lazy"
-          decoding="async"
-          fetchPriority="low"
-        />
+        <picture>
+          <source
+            media="(min-width: 1024px)"
+            srcSet="https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,q_auto,w_600/v1756827782/ncs-painting-edmonton/about-us/living-room-being-painted-red.png"
+            width="600"
+            height="600"
+          />
+          <img
+            src="https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,q_auto,w_450/v1756827782/ncs-painting-edmonton/about-us/living-room-being-painted-red.png"
+            alt="adding the finishing touches, baseboard being painted white"
+            className="aspect-square w-[450px] object-cover object-right lg:w-[600px]"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+            width="450"
+            height="450"
+          />
+        </picture>
       </div>
       {/* RIGHT COLUMN */}
       <div className="flex flex-col gap-6 justify-self-center md:gap-12 lg:justify-self-start">
