@@ -1,12 +1,12 @@
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 
-interface HeroProps {
+interface TestProps {
   children?: ReactNode;
   className?: string;
 }
 
-function Hero({ className }: HeroProps) {
+function Test({ className }: TestProps) {
   return (
     <header
       className={cn(
@@ -17,10 +17,10 @@ function Hero({ className }: HeroProps) {
         <div className="absolute inset-0">
           <picture>
             <img
-              src="https://res.cloudinary.com/jimbits/image/upload/c_limit,e_blur:40,f_auto,q_5,w_400,q_60/v1756580859/ncs-painting-edmonton/brown-house_djnb6y.png"
-              alt="Hero the water"
-              className="min-h-[calc(100dvh_-_64px)] md:w-full lg:min-h-[650px]"
-              loading="lazy"
+              src="https://res.cloudinary.com/jimbits/image/upload/c_fill,f_auto,q_20,w_500/v1756580859/ncs-painting-edmonton/landing/ncs-painting-edmoton-house-painting.png"
+              alt="test the water"
+              className="min-h-[calc(100dvh_-_64px)] object-cover md:w-full lg:min-h-[650px]"
+              loading="eager"
             />
           </picture>
         </div>
@@ -92,4 +92,4 @@ function Hero({ className }: HeroProps) {
   );
 }
 
-export default Hero;
+export default Test;

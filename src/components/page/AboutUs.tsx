@@ -62,7 +62,7 @@ export default function AboutUs() {
                 <picture>
                   <img
                     alt="checking color swatches while painters prep room"
-                    src="https://res.cloudinary.com/jimbits/image/upload/f_auto,q_60/v1756761693/ncs-painting-edmonton/about-us/meeting-with-clients-on-the-job.png"
+                    src="https://res.cloudinary.com/jimbits/image/upload/c_limit,f_auto,q_40,w_300/v1756761693/ncs-painting-edmonton/about-us/meeting-with-clients-on-the-job.png"
                     className="block size-full object-cover object-center"
                   />
                 </picture>
@@ -71,7 +71,7 @@ export default function AboutUs() {
                 <picture>
                   <img
                     alt="room being painted red with ladder red paint, roller and brush at the centerof the room on the floor"
-                    src="https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,q_60,w_500/v1756827782/ncs-painting-edmonton/about-us/living-room-being-painted-red"
+                    src="https://res.cloudinary.com/jimbits/image/upload/c_limit,f_auto,q_40,w_300/v1756827782/ncs-painting-edmonton/about-us/living-room-being-painted-red.png"
                     className="block size-full object-cover object-bottom"
                   />
                 </picture>
@@ -80,7 +80,7 @@ export default function AboutUs() {
                 <picture>
                   <img
                     alt="Exterior home painted by NCS painting in southwest Edmoton"
-                    src="https://res.cloudinary.com/jimbits/image/upload/c_limit,f_auto,h_500,q_33/v1756737699/ncs-painting-edmonton/about-us/ncs-painting-41_um0p15.jpg"
+                    src="https://res.cloudinary.com/jimbits/image/upload/c_limit,f_auto,q_40,w_300/v1756737699/ncs-painting-edmonton/about-us/ncs-painting-41_um0p15.jpg"
                     className="block size-full object-cover object-center"
                   />
                 </picture>
@@ -89,7 +89,7 @@ export default function AboutUs() {
                 <picture>
                   <img
                     alt=""
-                    src="https://res.cloudinary.com/jimbits/image/upload/v1756761499/ncs-painting-edmonton/about-us/nial-owner-ncs-painting.webp"
+                    src="https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,q_40,w_300/v1756761499/ncs-painting-edmonton/about-us/nial-owner-ncs-painting.webp"
                     className="block size-full object-cover object-center"
                   />
                 </picture>

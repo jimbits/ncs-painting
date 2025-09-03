@@ -4,6 +4,7 @@ const reviews = {
   author: {
     name: "Brenna Goyette",
     handle: "brennagoyette",
+    job: "painted dexk",
     imageUrl:
       "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80",
     logoUrl:
@@ -18,8 +19,7 @@ const testimonials = [
         author: {
           name: "Leslie Alexander",
           handle: "lesliealexander",
-          imageUrl:
-            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+          job: "painting",
         },
       },
       {
@@ -161,27 +161,12 @@ export default function Reviews() {
               <p>{`“${reviews.body}”`}</p>
             </blockquote>
             <figcaption className="flex flex-wrap items-center gap-x-4 gap-y-4 border-t border-gray-900/10 px-6 py-4 sm:flex-nowrap dark:border-white/10">
-              <img
-                alt=""
-                src={reviews.author.imageUrl}
-                className="size-10 flex-none rounded-full bg-gray-50 dark:bg-gray-700"
-              />
               <div className="flex-auto">
                 <div className="font-semibold text-gray-900 dark:text-white">
                   {reviews.author.name}
                 </div>
                 <div className="text-gray-600 dark:text-gray-400">{`@${reviews.author.handle}`}</div>
               </div>
-              <img
-                alt=""
-                src={reviews.author.logoUrl}
-                className="h-10 w-auto flex-none dark:hidden"
-              />
-              <img
-                alt=""
-                src={reviews.author.logoUrl.replace("-gray-900", "-gray-100")}
-                className="h-10 w-auto flex-none not-dark:hidden"
-              />
             </figcaption>
           </figure>
           {testimonials.map((columnGroup, columnGroupIdx) => (
@@ -210,11 +195,6 @@ export default function Reviews() {
                         <p>{`“${testimonial.body}”`}</p>
                       </blockquote>
                       <figcaption className="mt-6 flex items-center gap-x-4">
-                        <img
-                          alt=""
-                          src={testimonial.author.imageUrl}
-                          className="size-10 rounded-full bg-gray-50 dark:bg-gray-700"
-                        />
                         <div>
                           <div className="font-semibold text-gray-900 dark:text-white">
                             {testimonial.author.name}
