@@ -1,16 +1,16 @@
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 
-interface TestProps {
+interface HeroProps {
   children?: ReactNode;
   className?: string;
 }
 
-function Test({ className }: TestProps) {
+function Hero({ className }: HeroProps) {
   return (
     <header
       className={cn(
-        "md:h relative flex min-h-[calc(100dvh_-_64px)] flex-col justify-between overflow-y-hidden md:h-[600px]"
+        "md:h relative flex min-h-[calc(100dvh_-_64px)] flex-col justify-between overflow-y-hidden lg:min-h-[650px]"
       )}
     >
       <div>
@@ -18,14 +18,16 @@ function Test({ className }: TestProps) {
           <picture>
             <source
               media="(min-width: 1024px)"
-              srcSet="https://res.cloudinary.com/jimbits/image/upload/c_fill,f_auto,q_30,w_1440,h_650/v1756580859/ncs-painting-edmonton/landing/ncs-painting-edmoton-house-painting.png"
+              srcSet="https://res.cloudinary.com/jimbits/image/upload/c_fill,f_auto,q_20,w_900/v1756580859/ncs-painting-edmonton/landing/ncs-painting-edmoton-house-painting.png"
+              width="900"
+              height="600"
             />
             <img
-              src="https://res.cloudinary.com/jimbits/image/upload/c_fill,f_auto,q_auto,w_768,h_1024/v1756580859/ncs-painting-edmonton/landing/ncs-painting-edmoton-house-painting.png"
+              src="https://res.cloudinary.com/jimbits/image/upload/c_fill,f_auto,q_30,w_480,h_320/v1756580859/ncs-painting-edmonton/landing/ncs-painting-edmoton-house-painting.png"
               alt="NCS Painting Edmonton house painting services"
-              width="768"
-              height="1024"
-              className="h-[calc(100dvh-64px)] w-full object-cover"
+              width="480"
+              height="320"
+              className="min-h-[calc(100dvh_-_64px)] w-full object-cover lg:h-[650px]"
               loading="eager"
               fetchPriority="high"
               decoding="async"
@@ -100,4 +102,4 @@ function Test({ className }: TestProps) {
   );
 }
 
-export default Test;
+export default Hero;

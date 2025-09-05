@@ -7,19 +7,19 @@ export default function Preview() {
         <picture>
           <source
             media="(min-width: 1024px)"
-            srcSet="https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,q_auto,w_600/v1756827782/ncs-painting-edmonton/about-us/living-room-being-painted-red.png"
-            width="600"
-            height="600"
+            srcSet="https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,q_40,w_500,h_500/v1756827782/ncs-painting-edmonton/about-us/living-room-being-painted-red.png"
+            width="500"
+            height="500"
           />
           <img
-            src="https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,q_auto,w_450/v1756827782/ncs-painting-edmonton/about-us/living-room-being-painted-red.png"
+            src="https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,q_50,w_400,h_400/v1756827782/ncs-painting-edmonton/about-us/living-room-being-painted-red.png"
             alt="adding the finishing touches, baseboard being painted white"
-            className="aspect-square w-[450px] object-cover object-right lg:w-[600px]"
+            className="aspect-square w-[400px] object-cover object-right lg:w-[500px]"
             loading="lazy"
             decoding="async"
             fetchPriority="low"
-            width="450"
-            height="450"
+            width="400"
+            height="400"
           />
         </picture>
       </div>

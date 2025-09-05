@@ -1,0 +1,501 @@
+"use client";
+import React, { useState } from "react";
+
+// Types and Interfaces
+export interface QuoteFormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  projectDescription: string;
+}
+
+export interface FormErrors {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  phone?: string;
+  projectDescription?: string;
+}
+
+export interface GetQuoteProps {
+  onSubmit?: (data: QuoteFormData) => Promise<void>;
+  className?: string;
+  disabled?: boolean;
+}
+
+interface ValidationResult {
+  isValid: boolean;
+  errors: FormErrors;
+}
+
+// Validation patterns
+const VALIDATION_PATTERNS = {
+  email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+  phone: /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/,
+} as const;
+
+// Validation messages
+const VALIDATION_MESSAGES = {
+  required: {
+    firstName: "First name is required",
+    lastName: "Last name is required",
+    email: "Email is required",
+    phone: "Phone number is required",
+    projectDescription: "Project description is required",
+  },
+  invalid: {
+    email: "Please enter a valid email address",
+    phone: "Please enter a valid phone number",
+    projectDescription: "Please provide more details (minimum 20 characters)",
+  },
+} as const;
+
+const GetQuote: React.FC<GetQuoteProps> = ({
+  onSubmit,
+  className = "",
+  disabled = false,
+}) => {
+  const [formData, setFormData] = useState<QuoteFormData>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    projectDescription: "",
+  });
+
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ): void => {
+    const { name, value } = e.target;
+    const fieldName = name as keyof QuoteFormData;
+
+    setFormData((prev) => ({
+      ...prev,
+      [fieldName]: value,
+    }));
+
+    // Clear error when user starts typing
+    if (errors[fieldName]) {
+      setErrors((prev) => ({
+        ...prev,
+        [fieldName]: undefined,
+      }));
+    }
+  };
+
+  const validateForm = (): ValidationResult => {
+    const newErrors: FormErrors = {};
+
+    // Required field validation
+    (Object.keys(formData) as Array<keyof QuoteFormData>).forEach((field) => {
+      if (!formData[field].trim()) {
+        newErrors[field] = VALIDATION_MESSAGES.required[field];
+      }
+    });
+
+    // Email validation
+    if (
+      formData.email.trim() &&
+      !VALIDATION_PATTERNS.email.test(formData.email)
+    ) {
+      newErrors.email = VALIDATION_MESSAGES.invalid.email;
+    }
+
+    // Phone validation
+    if (
+      formData.phone.trim() &&
+      !VALIDATION_PATTERNS.phone.test(formData.phone)
+    ) {
+      newErrors.phone = VALIDATION_MESSAGES.invalid.phone;
+    }
+
+    // Project description length validation
+    if (
+      formData.projectDescription.trim() &&
+      formData.projectDescription.trim().length < 20
+    ) {
+      newErrors.projectDescription =
+        VALIDATION_MESSAGES.invalid.projectDescription;
+    }
+
+    return {
+      isValid: Object.keys(newErrors).length === 0,
+      errors: newErrors,
+    };
+  };
+
+  const handleSubmit = async (): Promise<void> => {
+    if (disabled || isSubmitting) return;
+
+    const validation = validateForm();
+
+    if (!validation.isValid) {
+      setErrors(validation.errors);
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      if (onSubmit) {
+        await onSubmit(formData);
+      } else {
+        // Default behavior - simulate API call
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+        alert(
+          "Quote request submitted successfully! We'll get back to you within 24 hours."
+        );
+      }
+
+      // Reset form on success
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        projectDescription: "",
+      });
+      setErrors({});
+    } catch (error) {
+      console.error("Error submitting quote request:", error);
+      alert("Error submitting quote request. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const renderErrorMessage = (field: keyof FormErrors): React.ReactNode => {
+    if (!errors[field]) return null;
+
+    return (
+      <p className="mt-2 flex items-center text-sm text-red-600">
+        <svg className="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fillRule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+            clipRule="evenodd"
+          />
+        </svg>
+        {errors[field]}
+      </p>
+    );
+  };
+
+  const getInputClassName = (field: keyof FormErrors): string => {
+    const baseClasses = `w-full px-4 py-3.5 bg-white border-2 rounded-xl text-slate-900 placeholder-slate-400 
+      focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 
+      transition-all duration-200`;
+
+    const errorClasses = errors[field]
+      ? "border-red-300 focus:border-red-500 focus:ring-red-500/20"
+      : "border-slate-200 hover:border-slate-300";
+
+    return `${baseClasses} ${errorClasses}`;
+  };
+
+  return (
+    <div
+      className={`min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 ${className}`}
+    >
+      <div className="container mx-auto px-4 py-12 lg:py-20">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          {/* Form Section */}
+          <div className="order-2 lg:order-1">
+            <div className="mx-auto max-w-lg lg:mx-0">
+              {/* Header */}
+              <div className="mb-10">
+                <div className="mb-4 inline-flex items-center rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700">
+                  <svg
+                    className="mr-2 h-4 w-4"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  Free Quote Request
+                </div>
+                <h1 className="mb-4 text-4xl font-bold tracking-tight text-slate-900 lg:text-5xl">
+                  Get Your Painting Quote
+                </h1>
+                <p className="text-xl leading-relaxed text-slate-600">
+                  Ready to transform your space? Tell us about your project and
+                  we'll provide a detailed, no-obligation quote within 24 hours.
+                </p>
+              </div>
+
+              {/* Form */}
+              <div className="space-y-6">
+                {/* Name Fields */}
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div>
+                    <label
+                      htmlFor="firstName"
+                      className="mb-2 block text-sm font-semibold text-slate-700"
+                    >
+                      First Name
+                    </label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      className={getInputClassName("firstName")}
+                      placeholder="John"
+                      disabled={disabled || isSubmitting}
+                      autoComplete="given-name"
+                    />
+                    {renderErrorMessage("firstName")}
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="lastName"
+                      className="mb-2 block text-sm font-semibold text-slate-700"
+                    >
+                      Last Name
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      className={getInputClassName("lastName")}
+                      placeholder="Doe"
+                      disabled={disabled || isSubmitting}
+                      autoComplete="family-name"
+                    />
+                    {renderErrorMessage("lastName")}
+                  </div>
+                </div>
+
+                {/* Email Field */}
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="mb-2 block text-sm font-semibold text-slate-700"
+                  >
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className={getInputClassName("email")}
+                    placeholder="john.doe@example.com"
+                    disabled={disabled || isSubmitting}
+                    autoComplete="email"
+                  />
+                  {renderErrorMessage("email")}
+                </div>
+
+                {/* Phone Field */}
+                <div>
+                  <label
+                    htmlFor="phone"
+                    className="mb-2 block text-sm font-semibold text-slate-700"
+                  >
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className={getInputClassName("phone")}
+                    placeholder="(555) 123-4567"
+                    disabled={disabled || isSubmitting}
+                    autoComplete="tel"
+                  />
+                  {renderErrorMessage("phone")}
+                </div>
+
+                {/* Project Description Field */}
+                <div>
+                  <label
+                    htmlFor="projectDescription"
+                    className="mb-2 block text-sm font-semibold text-slate-700"
+                  >
+                    Project Details
+                  </label>
+                  <textarea
+                    id="projectDescription"
+                    name="projectDescription"
+                    value={formData.projectDescription}
+                    onChange={handleInputChange}
+                    rows={5}
+                    className={`${getInputClassName("projectDescription")} resize-none`}
+                    placeholder="Tell us about your painting project... Include details like room size, surface type, color preferences, timeline, and any specific requirements."
+                    disabled={disabled || isSubmitting}
+                  />
+                  {renderErrorMessage("projectDescription")}
+                </div>
+
+                {/* Submit Button */}
+                <div className="pt-4">
+                  <button
+                    type="button"
+                    onClick={handleSubmit}
+                    disabled={disabled || isSubmitting}
+                    className={`w-full transform rounded-xl px-8 py-4 text-lg font-semibold text-white transition-all duration-200 ${
+                      disabled || isSubmitting
+                        ? "cursor-not-allowed bg-slate-400"
+                        : "bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg hover:scale-[1.02] hover:from-blue-700 hover:to-blue-800 hover:shadow-xl focus:ring-4 focus:ring-blue-500/30 focus:outline-none active:scale-[0.98]"
+                    }`}
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center">
+                        <svg
+                          className="mr-3 -ml-1 h-5 w-5 animate-spin"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                            className="opacity-25"
+                          ></circle>
+                          <path
+                            fill="currentColor"
+                            strokeWidth="4"
+                            className="opacity-75"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          ></path>
+                        </svg>
+                        Sending Quote Request...
+                      </span>
+                    ) : (
+                      <span className="flex items-center justify-center">
+                        Get My Free Quote
+                        <svg
+                          className="ml-2 h-5 w-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M13 7l5 5m0 0l-5 5m5-5H6"
+                          />
+                        </svg>
+                      </span>
+                    )}
+                  </button>
+                </div>
+
+                {/* Trust Indicators */}
+                <div className="flex items-center justify-center space-x-6 pt-6 text-sm text-slate-500">
+                  <div className="flex items-center">
+                    <svg
+                      className="mr-1.5 h-4 w-4 text-green-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    Free Quote
+                  </div>
+                  <div className="flex items-center">
+                    <svg
+                      className="mr-1.5 h-4 w-4 text-green-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    No Obligation
+                  </div>
+                  <div className="flex items-center">
+                    <svg
+                      className="mr-1.5 h-4 w-4 text-green-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    24hr Response
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Image Section */}
+          <div className="order-1 lg:order-2">
+            <div className="relative">
+              {/* Background Decoration */}
+              <div className="absolute -inset-4 rotate-2 transform rounded-3xl bg-gradient-to-r from-blue-500/10 to-purple-500/10"></div>
+              <div className="absolute -inset-2 -rotate-1 transform rounded-2xl bg-gradient-to-r from-blue-500/5 to-purple-500/5"></div>
+
+              {/* Main Image */}
+              <div className="relative rounded-2xl bg-white p-4 shadow-2xl">
+                <picture>
+                  <img
+                    src="https://res.cloudinary.com/jimbits/image/upload/v1755315030/ncs-painting-edmonton/landing/pouring-paint_aesrfm.avif"
+                    alt="Professional paint pouring creating vibrant colors - NCS Painting Edmonton"
+                    className="h-[400px] w-full rounded-xl object-cover lg:h-[600px]"
+                    loading="lazy"
+                  />
+                </picture>
+
+                {/* Image Overlay Text */}
+                <div className="absolute right-8 bottom-8 left-8 rounded-xl bg-slate-900 p-4 shadow-lg backdrop-blur-sm">
+                  <h3 className="-900 mb-1 text-center text-lg font-bold text-white">
+                    Fast, No-Obligation Estimates for Your Home or Business
+                  </h3>
+                  <p className="text-center text-sm leading-relaxed font-semibold text-white">
+                    Transform your space with our expert painting team in
+                    Edmonton
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default GetQuote;
+/* 
+ 
+                <div className="absolute right-8 bottom-8 left-8 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 p-4 shadow-lg backdrop-blur-sm">
+                  <h3 className="-900 mb-1 text-center text-lg font-bold text-white">
+                    Fast, No-Obligation Estimates for Your Home or Business
+                  </h3>
+                  <p className="text-center text-sm leading-relaxed text-blue-200">
+                    Transform your space with our expert painting team in
+                    Edmonton
+                  </p>
+                </div>
+*/

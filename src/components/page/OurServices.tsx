@@ -146,8 +146,8 @@ export default function OurServices() {
                 "mt-8 space-y-3 text-sm/6 sm:mt-10"
               )}
             >
-              {tier.features.map((feature) => (
-                <li key={feature} className="flex gap-x-3">
+              {tier.features.map((feature, index) => (
+                <li key={`ncs_${index}`} className="flex gap-x-3">
                   <CheckIcon
                     aria-hidden="true"
                     className={classNames(

@@ -64,10 +64,10 @@ body {
 
 .gradient-text {
   background: linear-gradient(
-    180deg,
-    theme(colors.indigo.500) 30%,
-    theme(colors.indigo.500) 50%,
-    theme(colors.blue.400) 90%
+    270deg,
+    theme(colors.blue.600) 20%,
+    theme(colors.blue.500) 40%,
+    theme(colors.indigo.600) 65%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
