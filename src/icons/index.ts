@@ -1,0 +1,15 @@
+export { default as BucketIcon } from "./bucket-roller.svg";
+export { default as ExperienceIcon } from "./experience.svg";
+export { default as FaqIcon } from "./faq.svg";
+export { default as favicon } from "./favicon.svg";
+export { default as HeroIcon } from "./hero.svg";
+export { default as LocalIcon } from "./local.svg";
+export { default as Logo } from "./logo.svg";
+export { default as PaintBrushIcon } from "./paint-brush.svg";
+export { default as PaintBucketIcon } from "./paint-bucket.svg";
+export { default as PaintRollerIcon } from "./paint-roller.svg";
+export { default as PriceIcon } from "./price.svg";
+export { default as ServiceIcon } from "./service.svg";
+export { default as SprayGunIcon } from "./spray-gun.svg";
+export { default as CheckedIcon } from "./trust-check.svg";
+export { default as TrustedIcon } from "./trust.svg";
