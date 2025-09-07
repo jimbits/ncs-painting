@@ -1,6 +1,6 @@
 export default function AboutUs() {
   return (
-    <section className="relative overflow-hidden dark:bg-gray-900">
+    <section className="relative overflow-hidden dark:bg-white">
       <div className="relative py-24">
         <div
           aria-hidden="true"
@@ -28,13 +28,13 @@ export default function AboutUs() {
             />
           </div>
           <header className="max-w-4xl">
-            <p className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">
+            <p className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-700">
               NCS PAINTING WHO WE ARE
             </p>
-            <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
+            <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
               ABOUT US
             </p>
-            <p className="mt-6 text-xl/8 text-balance text-gray-700 dark:text-gray-300">
+            <p className="mt-6 text-xl/8 text-balance text-gray-700">
               Over 35 years track record of excellence means you can feel
               confident knowing your paint job will be with the high standard we
               demand.
@@ -42,25 +42,25 @@ export default function AboutUs() {
           </header>
           <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-16">
             <div className="lg:pr-8">
-              <h2 className="text-2xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white">
+              <h2 className="text-2xl font-semibold tracking-tight text-pretty text-gray-900">
                 A Local Edmonton Painting Business With a Track Record of
                 Excellence
               </h2>
-              <p className="mt-6 text-base/7 text-gray-600 dark:text-gray-400">
+              <p className="mt-6 text-base/7 text-gray-600">
                 Over 35 years track record of excellence means you can feel
                 confident knowing your paint job will be with the high standard
                 we demand. With over 30 years experience and an knowledgeable
                 staff, NCS Painting has experience in all of your decorating
                 needs.
               </p>
-              <p className="mt-6 text-base/7 text-gray-600 dark:text-gray-400">
+              <p className="0 mt-6 text-base/7 text-gray-600">
                 If you need straight painting we do that. However, we also offer
                 numerous faux finishes, airless spraying, HVLP Spraying, wood
                 refinishing, drywall repairs, installing drywall, power washing
                 and minor carpentry. Our goal is to leave our customers
                 satisfied.
               </p>
-              <p className="mt-6 text-base/7 text-gray-600 dark:text-gray-400">
+              <p className="mt-6 text-base/7 text-gray-600">
                 "We pay special attention to the details" Give us a call today
                 for a free estimate. Remember we don't ask for an up front
                 deposit under $1500.00

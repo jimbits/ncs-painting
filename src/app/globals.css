@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
+ 
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -15,33 +15,17 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-@layer base {
-  html {
-    color-scheme: light only;
-  }
-  
-  body {
-    color-scheme: light only;
-  }
-  
-  /* Prevent Chrome from applying dark mode to any element */
-  * {
-    color-scheme: light only;
-  }
-}
+ 
 @layer utilities {
   .h-dvh { height: 100dvh; }
   .min-h-dvh { min-height: 100dvh; }
   .h-svh { height: 100svh; }
   .min-h-svh { min-height: 100svh; }
 }
-html, body {
-  color-scheme: light only;
-}
+ 
 
-* {
-  color-scheme: light only;
-}
+ 
+
 @layer utilities {
   .text-copy {
     @apply mt-6 mb-8 text-base text-gray-600 dark:text-gray-400;
@@ -49,30 +33,32 @@ html, body {
   .responsive{
     @apply sm:bg-red-500 md:bg-orange-500 lg:bg-indigo-500 xl:bg-fuchsia-500 2xl:bg-lime-500
   }
-}
-/* @media (prefers-color-scheme: light) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    .gradient-text {
+    background: linear-gradient(
+      270deg,
+      theme(colors.blue.600) 20%,
+      theme(colors.blue.500) 40%,
+      theme(colors.indigo.600) 65%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
-} */
 
+  .dark .gradient-text {
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+    color: theme(colors.white);
+  }
+}
+ 
 body {
   background: var(--background);
   color: var(--foreground);
 }
 
-.gradient-text {
-  background: linear-gradient(
-    270deg,
-    theme(colors.blue.600) 20%,
-    theme(colors.blue.500) 40%,
-    theme(colors.indigo.600) 65%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
 
 .clipper{
   background-color: red;

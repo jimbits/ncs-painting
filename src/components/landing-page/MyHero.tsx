@@ -51,11 +51,11 @@ export default function MyHero() {
       <header className="mx-auto max-w-7xl px-6 pt-10 pb-24 md:grid md:grid-cols-2 md:grid-rows-[auto_1fr] lg:grid-rows-[300px_300px] lg:px-8">
         {/* HEADING 1 */}
         <div className="self-end">
-          <p className="gradient-text text-center text-6xl/tight font-extrabold uppercase sm:mb-3 sm:text-6xl md:m-0 md:text-left md:text-5xl lg:text-[clamp(48px,5vw,80px)]">
+          <p className="gradient-text dark:gradient-text text-center text-6xl/tight font-extrabold uppercase sm:mb-3 sm:text-6xl md:m-0 md:text-left md:text-5xl lg:text-[clamp(48px,5vw,80px)]">
             NCS Painting
           </p>
-          <h1 className="text-center text-lg leading-6 font-bold text-pretty text-stone-600/85 sm:text-2xl md:text-left md:text-xl lg:text-2xl">
-            Edmontons Complete Interior &{" "}
+          <h1 className="text-center text-lg leading-6 font-bold text-pretty text-stone-600/85 sm:text-2xl md:text-left md:text-xl lg:text-2xl dark:text-white">
+            Edmontons Complete Interior &
             <span className="block">Exterior House Painting Services</span>
           </h1>
         </div>
@@ -65,7 +65,7 @@ export default function MyHero() {
 
         {/* CALL TO ACTION */}
         <div className="max-w-2xl text-center md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-3 lg:mx-0 lg:self-start">
-          <p className="xl: text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 md:text-left md:text-xl/tight lg:mt-4 dark:text-gray-400">
+          <p className="xl: text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 md:text-left md:text-xl/tight lg:mt-4 dark:text-gray-200">
             NCS Painting specializes exclusively in residential home painting.
             We are dedicated to providing quality premium materials that protect
             your home inside and out.
@@ -73,13 +73,13 @@ export default function MyHero() {
           <div className="mt-10 flex items-center justify-center gap-x-6 md:justify-start">
             <a
               href="#"
-              className="rounded-md border border-red-600 px-3.5 py-2.5 text-sm font-semibold text-red-600 shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-red-400 dark:focus-visible:outline-red-500"
+              className="rounded-md border border-rose-600 px-3.5 py-2.5 text-sm font-semibold text-rose-600 shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-rose-500 dark:text-white dark:hover:bg-rose-700 dark:focus-visible:outline-red-500"
             >
               Call (780)-722-6555
             </a>
             <a
               href="#"
-              className="rounded-md border border-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-indigo-700 dark:text-white"
+              className="rounded-md border border-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-indigo-700 dark:border-white dark:text-white"
             >
               Book Quote Online
             </a>

@@ -12,7 +12,7 @@ const tiers = [
       "Wall, Ceiling & Feature Wall Painting",
       "Cabinet Painting / Refinishing",
       "Wallpaper Installation & Removal",
-      "Trim, Crown Molding, Millwork Painting",
+      "Trim, Crown Molding & Millwork",
       "Eco friendly interior painting",
       "Popcorn cieling removal",
       "Accent & Feature Walls",
@@ -96,7 +96,7 @@ export default function OurServices() {
                 ? "relative border-8 bg-gray-900 shadow-2xl"
                 : "bg-white/60 sm:mx-8 lg:mx-0 dark:bg-white/2.5",
               tier.featured
-                ? ""
+                ? "bg-gray-900 dark:bg-white"
                 : tierIdx === 0
                   ? "rounded-t-3xl sm:rounded-b-none lg:rounded-tr-none lg:rounded-bl-3xl"
                   : "sm:rounded-t-none lg:rounded-tr-3xl lg:rounded-bl-none",
@@ -107,7 +107,7 @@ export default function OurServices() {
               id={tier.id}
               className={classNames(
                 tier.featured
-                  ? "text-indigo-400"
+                  ? "text-indigo-400 dark:text-indigo-600"
                   : "text-indigo-600 dark:text-indigo-400",
                 "text-base/7 font-semibold"
               )}
@@ -118,7 +118,7 @@ export default function OurServices() {
               <span
                 className={classNames(
                   tier.featured
-                    ? "text-white"
+                    ? "text-white dark:text-gray-900"
                     : "text-gray-900 dark:text-white",
                   "text-5xl font-semibold tracking-tighter"
                 )}
@@ -130,7 +130,7 @@ export default function OurServices() {
             <p
               className={classNames(
                 tier.featured
-                  ? "text-gray-300"
+                  ? "text-gray-300 dark:text-gray-700"
                   : "text-gray-600 dark:text-gray-300",
                 "mt-6 text-base/7"
               )}
@@ -141,9 +141,9 @@ export default function OurServices() {
               role="list"
               className={classNames(
                 tier.featured
-                  ? "text-gray-300"
+                  ? "text-gray-300 dark:text-gray-600"
                   : "text-gray-600 dark:text-gray-300",
-                "mt-8 space-y-3 text-sm/6 sm:mt-10"
+                "mt-8 space-y-3 text-sm/6 tracking-tight sm:mt-10"
               )}
             >
               {tier.features.map((feature, index) => (
