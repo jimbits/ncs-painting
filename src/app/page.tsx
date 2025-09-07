@@ -11,6 +11,7 @@ import StAlbert from "@/components/landing-page/StAlbert";
 import SherwoodPark from "@/components/landing-page/SherwoodPark";
 import FortSaskatchewan from "@/components/landing-page/FortSaskatchewan11";
 import PaintingEstimate from "@/components/landing-page/PaintingEstimate";
+import Footer from "@/components/landing-page/Footer";
 // app/page.tsx
 // import type { Metadata } from "next";
 
@@ -42,6 +43,7 @@ export default function Home() {
         <FortSaskatchewan />
         <PaintingEstimate />
         <StAlbert />
+        <Footer />
       </main>
     </div>
   );

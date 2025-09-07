@@ -4,7 +4,7 @@ export { default as FaqIcon } from "./faq.svg";
 export { default as favicon } from "./favicon.svg";
 export { default as HeroIcon } from "./hero.svg";
 export { default as LocalIcon } from "./local.svg";
-export { default as Logo } from "./logo.svg";
+export { default as Logo } from "./favicon.svg";
 export { default as PaintBrushIcon } from "./paint-brush.svg";
 export { default as PaintBucketIcon } from "./paint-bucket.svg";
 export { default as PaintRollerIcon } from "./paint-roller.svg";
