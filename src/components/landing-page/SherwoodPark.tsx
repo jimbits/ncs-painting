@@ -90,7 +90,7 @@ export default function SherwoodPark() {
             src="https://res.cloudinary.com/jimbits/image/upload/v1756737699/ncs-painting-edmonton/about-us/ncs-painting-41_um0p15.jpg"
             width={2432}
             height={1442}
-            className="w-full max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 md:-ml-4 md:hidden md:w-3xl lg:-ml-0 lg:block dark:hidden dark:ring-white/10"
+            className="w-full max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 md:-ml-4 md:hidden md:w-3xl lg:-ml-0 lg:block dark:ring-white/10"
           />
         </div>
       </div>

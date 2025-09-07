@@ -1,6 +1,8 @@
-import { useState, useEffect } from "react";
+"use client";
 
-export default function DarkModeToggle() {
+import { useEffect, useState } from "react";
+
+export default function App() {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
@@ -12,11 +14,13 @@ export default function DarkModeToggle() {
   }, [dark]);
 
   return (
-    <button
-      onClick={() => setDark(!dark)}
-      className="rounded bg-gray-200 px-4 py-2 dark:bg-gray-800 dark:text-white"
-    >
-      Toggle Dark Mode
-    </button>
+    <div className="bg-white text-black dark:bg-gray-900 dark:text-white">
+      <button
+        onClick={() => setDark(!dark)}
+        className="rounded-lg bg-gray-200 px-4 py-2 dark:bg-gray-700"
+      >
+        Toggle Dark Mode
+      </button>
+    </div>
   );
 }

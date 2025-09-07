@@ -8,9 +8,9 @@ interface PaintingCalculatorProps {
 
 function PaintingCalculator({ className }: PaintingCalculatorProps) {
   return (
-    <div className="bg-indigo-100 dark:bg-indigo-950">
+    <div className="bg-indigo-100 dark:bg-white">
       <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 md:py-72 lg:flex lg:items-center lg:justify-between lg:px-8">
-        <h2 className="max-w-2xl text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
+        <h2 className="max-w-2xl text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-gray-900">
           Got Questions?
           <br />
           Need Some Advice.
@@ -24,10 +24,13 @@ function PaintingCalculator({ className }: PaintingCalculatorProps) {
           </a>
           <a
             href="#"
-            className="text-sm/6 font-semibold text-gray-900 dark:text-gray-100"
+            className="text-sm/6 text-xl font-semibold text-gray-900 dark:text-gray-900"
           >
-            FAQ
-            <span aria-hidden="true">→</span>
+            {""}FAQ
+            <span aria-hidden="true" className="text-xl">
+              {" "}
+              {"  "}→
+            </span>
           </a>
         </div>
       </div>

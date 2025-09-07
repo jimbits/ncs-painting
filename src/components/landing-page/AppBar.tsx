@@ -3,13 +3,14 @@ import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 import RollOnIcon from "@/icons/new.svg";
 import { Menu, PhoneCallIcon, User2Icon } from "lucide-react";
-import DarkModeToggle from "@/lib/DarkModeToggle";
+import { useDarkMode } from "@/hooks/useDarkMode";
 interface AppBarProps {
   children?: ReactNode;
   className?: string;
 }
 
 function AppBar({ className }: AppBarProps) {
+  const [dark, setDark] = useDarkMode();
   return (
     <div className={cn("px-2 py-3 dark:bg-gray-900", className)}>
       <ul className={cn("flex items-center justify-between")}>
@@ -22,7 +23,13 @@ function AppBar({ className }: AppBarProps) {
           <figure className="group hidden select-none lg:flex lg:flex-col lg:items-center">
             <User2Icon className="w-6 group-hover:stroke-slate-900 dark:text-white" />
             <figcaption className="text-xs group-hover:text-indigo-600 dark:text-white">
-              <DarkModeToggle />
+              <button
+                type="button"
+                onClick={() => setDark(!dark)}
+                className="rounded-lg bg-gray-200 px-4 py-2 transition dark:bg-gray-700"
+              >
+                {dark ? "☀️ Light Mode" : "🌙 Dark Mode"}
+              </button>
             </figcaption>
           </figure>
         </li>

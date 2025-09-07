@@ -38,12 +38,12 @@ export default function Faqs() {
         <div className="lg:grid lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5">
             <header>
-              <FaqIcon className="mb-6 w-48 fill-indigo-600" />
+              <FaqIcon className="mb-6 w-48 fill-indigo-600 dark:fill-white" />
               <h2 className="text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">
                 Frequently asked questions
               </h2>
-              <p className="mt-4 mb-4 text-base/7 text-pretty text-gray-600 dark:text-gray-400">
-                If you can’t find the answer you’re looking for?
+              <p className="mt-4 mb-4 text-base/7 text-pretty text-gray-600 dark:text-gray-200">
+                Can’t find the answer you’re looking for?
               </p>
             </header>
             <div className="flex flex-row gap-4">
