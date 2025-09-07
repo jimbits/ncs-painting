@@ -73,7 +73,7 @@ export default function MyHero() {
           <div className="mt-10 flex items-center justify-center gap-x-6 md:justify-start">
             <a
               href="#"
-              className="rounded-md border border-red-600 bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-red-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 dark:bg-red-500 dark:hover:bg-red-400 dark:focus-visible:outline-red-500"
+              className="rounded-md border border-red-600 px-3.5 py-2.5 text-sm font-semibold text-red-600 shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-red-400 dark:focus-visible:outline-red-500"
             >
               Call (780)-722-6555
             </a>

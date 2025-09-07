@@ -1,9 +1,9 @@
-import Services from "@/components/page/Services";
-import Hero from "@/components/page/Hero";
-import WhyChooseUs from "@/components/page/WhyChooseUs";
-import AppBar from "@/components/page/AppBar";
-import Preview from "@/components/page/Preview";
-import Reviews from "@/components/page/Reviews";
+import Services from "@/components/landing-page/Services";
+import Hero from "@/components/landing-page/Hero";
+import WhyChooseUs from "@/components/landing-page/WhyChooseUs";
+import AppBar from "@/components/landing-page/AppBar";
+import Preview from "@/components/landing-page/Preview";
+import Reviews from "@/components/landing-page/Reviews";
 
 // painting-wall-red-room-before-after-restoration-refurbishment_157125-6682_rg2xqe.avif
 export default function Home() {

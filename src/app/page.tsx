@@ -1,13 +1,16 @@
-import Hero from "@/components/page/Hero";
-import AppBar from "@/components/page/AppBar";
-import OurServices from "@/components/page/OurServices";
-import AboutUs from "@/components/page/AboutUs";
-import Reviews from "@/components/page/Reviews";
-import Preview from "@/components/page/Preview";
-import Faqs from "@/components/page/Faqs";
-import GetQuote from "@/components/page/GetQuote";
-import MyHero from "@/components/page/MyHero";
-
+import Hero from "@/components/landing-page/Hero";
+import AppBar from "@/components/landing-page/AppBar";
+import OurServices from "@/components/landing-page/OurServices";
+import AboutUs from "@/components/landing-page/AboutUs";
+import Reviews from "@/components/landing-page/Reviews";
+import Preview from "@/components/landing-page/Preview";
+import Faqs from "@/components/landing-page/Faqs";
+import GetQuote from "@/components/landing-page/GetQuote";
+import MyHero from "@/components/landing-page/MyHero";
+import StAlbert from "@/components/landing-page/StAlbert";
+import SherwoodPark from "@/components/landing-page/SherwoodPark";
+import FortSaskatchewan from "@/components/landing-page/FortSaskatchewan11";
+import PaintingEstimate from "@/components/landing-page/PaintingEstimate";
 // app/page.tsx
 // import type { Metadata } from "next";
 
@@ -28,12 +31,17 @@ export default function Home() {
 
       <MyHero />
       <main>
-        <GetQuote />
+        {/* <GetQuote /> */}
         <AboutUs />
         <OurServices />
         <Preview />
         <Reviews />
+        <SherwoodPark />
         <Faqs />
+
+        <FortSaskatchewan />
+        <PaintingEstimate />
+        <StAlbert />
       </main>
     </div>
   );

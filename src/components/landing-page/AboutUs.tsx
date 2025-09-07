@@ -1,7 +1,7 @@
 export default function AboutUs() {
   return (
     <section className="relative overflow-hidden dark:bg-gray-900">
-      <div className="relative bg-indigo-50/60 py-24">
+      <div className="relative py-24">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 top-1/2 z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl"

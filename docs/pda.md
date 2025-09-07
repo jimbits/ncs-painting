@@ -1,0 +1,1 @@
+https://flyonui.com/pro#pricing
