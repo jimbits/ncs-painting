@@ -1,4 +1,3 @@
-import Hero from "@/components/landing-page/Hero";
 import AppBar from "@/components/landing-page/AppBar";
 import OurServices from "@/components/landing-page/OurServices";
 import AboutUs from "@/components/landing-page/AboutUs";
@@ -6,12 +5,14 @@ import Reviews from "@/components/landing-page/Reviews";
 import Preview from "@/components/landing-page/Preview";
 import Faqs from "@/components/landing-page/Faqs";
 import GetQuote from "@/components/landing-page/GetQuote";
-import MyHero from "@/components/landing-page/MyHero";
+import Hero from "@/components/landing-page/Hero";
 import StAlbert from "@/components/landing-page/StAlbert";
 import SherwoodPark from "@/components/landing-page/SherwoodPark";
-import FortSaskatchewan from "@/components/landing-page/FortSaskatchewan11";
+import FortSaskatchewan from "@/components/landing-page/FortSaskatchewan";
 import PaintingEstimate from "@/components/landing-page/PaintingEstimate";
 import Footer from "@/components/landing-page/Footer";
+import ResponsiveGuideBar from "@/lib/ResponsiveGuide";
+
 // app/page.tsx
 // import type { Metadata } from "next";
 
@@ -27,19 +28,18 @@ import Footer from "@/components/landing-page/Footer";
 // };
 export default function Home() {
   return (
-    <div className="h-full overflow-y-auto">
+    <div>
+      <ResponsiveGuideBar position="top" className="h-3" />
       <AppBar />
 
-      <MyHero />
+      <Hero />
       <main>
-        {/* <GetQuote /> */}
         <AboutUs />
         <OurServices />
         <Preview />
         <Reviews />
         <SherwoodPark />
         <Faqs />
-
         <FortSaskatchewan />
         <PaintingEstimate />
         <StAlbert />

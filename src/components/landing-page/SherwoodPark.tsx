@@ -44,13 +44,7 @@ export default function SherwoodPark() {
             <h3 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
               Sherwood Park House Painters
             </h3>
-            <img
-              alt="Product screenshot"
-              src="https://res.cloudinary.com/jimbits/image/upload/v1756737704/ncs-painting-edmonton/about-us/ncs-painting-75_fowoio.png"
-              width={2432}
-              height={1442}
-              className="my-8 w-full max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 md:-ml-4 md:w-3xl lg:-ml-0 lg:hidden dark:hidden dark:ring-white/10"
-            />
+
             <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
               From Emerald Hills estates to Broadmoor bungalows we've helped
               hundreds of Sherwood Park homeowners protect and beautify your
@@ -70,7 +64,7 @@ export default function SherwoodPark() {
                 </li>
               ))}
             </ul>
-            <div className="mt-10 flex justify-center gap-6">
+            <div className="mt-10 flex justify-center gap-6 lg:justify-start">
               <a
                 href="#"
                 className="inline-flex rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:shadow-none"
@@ -85,12 +79,26 @@ export default function SherwoodPark() {
               </a>
             </div>
           </div>
+
           <img
-            alt="Product screenshot"
-            src="https://res.cloudinary.com/jimbits/image/upload/v1756737699/ncs-painting-edmonton/about-us/ncs-painting-41_um0p15.jpg"
-            width={2432}
-            height={1442}
-            className="w-full max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 md:-ml-4 md:hidden md:w-3xl lg:-ml-0 lg:block dark:ring-white/10"
+            src="https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,w_768/v1756737699/ncs-painting-edmonton/about-us/ncs-painting-41_um0p15.jpg"
+            srcSet="
+    https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,w_452/v1756737699/ncs-painting-edmonton/about-us/ncs-painting-41_um0p15.jpg 452w,
+    https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,w_591/v1756737699/ncs-painting-edmonton/about-us/ncs-painting-41_um0p15.jpg 591w,
+    https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,w_672/v1756737699/ncs-painting-edmonton/about-us/ncs-painting-41_um0p15.jpg 672w,
+    https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,w_768/v1756737699/ncs-painting-edmonton/about-us/ncs-painting-41_um0p15.jpg 768w
+  "
+            sizes="(max-width: 640px) 100vw,
+         (max-width: 768px) 591px,
+         (max-width: 1024px) 672px,
+         768px"
+            width="870"
+            height="738"
+            alt="room being painted red with ladder, red paint, roller and brush at the center of the room on the floor"
+            className="w-full max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 md:-ml-4 md:w-3xl lg:-ml-0 lg:block dark:ring-white/10"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
           />
         </div>
       </div>

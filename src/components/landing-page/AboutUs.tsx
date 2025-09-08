@@ -132,13 +132,13 @@ export default function AboutUs() {
                   <picture>
                     <source
                       media="(min-width: 1024px)"
-                      srcSet="https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,q_auto,w_300,h_300/v1756761499/ncs-painting-edmonton/about-us/nial-owner-ncs-painting.webp"
+                      srcSet="https://res.cloudinary.com/jimbits/image/upload/c_fit,h_300,q_auto/v1757273265/ncs-painting-edmonton/about-us/preping-walls-for-painting.webp"
                       width="300"
                       height="300"
                     />
                     <img
-                      alt=""
-                      src="https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,q_auto,w_225/v1756761499/ncs-painting-edmonton/about-us/nial-owner-ncs-painting.webp"
+                      alt="NCS Painting team preparing walls for painting in Edmonton home"
+                      src="https://res.cloudinary.com/jimbits/image/upload/c_fit,h_225,q_auto/v1757273265/ncs-painting-edmonton/about-us/preping-walls-for-painting.webp"
                       className="block size-full object-cover object-center"
                       loading="lazy"
                       decoding="async"
