@@ -102,7 +102,7 @@ export default function OurServices() {
                 : tierIdx === 0
                   ? "rounded-t-3xl sm:rounded-b-none lg:rounded-tr-none lg:rounded-bl-3xl"
                   : "sm:rounded-t-none lg:rounded-tr-3xl lg:rounded-bl-none",
-              "rounded-3xl p-8 ring-1 ring-gray-900/10 sm:p-10 dark:ring-white/10"
+              "rounded-3xl px-4 py-8 ring-1 ring-gray-900/10 sm:p-10 dark:ring-white/10"
             )}
           >
             <h3
@@ -116,7 +116,7 @@ export default function OurServices() {
             >
               {tier.name}
             </h3>
-            <p className="mt-4 flex items-baseline gap-x-2">
+            <p className="flex items-baseline gap-x-2">
               <span
                 className={classNames(
                   tier.featured

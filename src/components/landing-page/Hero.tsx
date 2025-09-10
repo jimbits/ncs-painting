@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Hero() {
   return (
     // Fixed version with proper overflow control
-    <div className="relative bg-orange-500">
+    <div className="relative">
       <header className="mx-auto max-w-7xl px-3 pb-24 md:grid md:grid-cols-2 md:grid-rows-[auto_1fr] lg:grid-rows-[300px_300px] lg:px-8">
         {/* HEADING 1 */}
         <div className="self-end">

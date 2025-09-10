@@ -29,7 +29,7 @@ import ResponsiveGuideBar from "@/lib/ResponsiveGuide";
 export default function Home() {
   return (
     <div className="overflow-x: hidden;">
-      <ResponsiveGuideBar />
+      {/* <ResponsiveGuideBar /> */}
       <AppBar className="mb-3" />
 
       <Hero />
@@ -37,13 +37,13 @@ export default function Home() {
         <AboutUs />
         <OurServices />
         <Preview />
-        {/*  <Reviews />
+        <Reviews />
         <SherwoodPark />
         <Faqs />
         <FortSaskatchewan />
-        <PaintingEstimate />
+        {/*<PaintingEstimate />*/}
         <StAlbert />
-        <Footer /> */}
+        <Footer />
       </main>
     </div>
   );

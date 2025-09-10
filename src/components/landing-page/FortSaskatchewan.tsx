@@ -38,7 +38,7 @@ export default function FortSaskatchewan() {
     <section className="overflow-hidden bg-white py-24 sm:py-32 dark:bg-gray-900">
       <div className="relative isolate">
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="mx-auto flex max-w-2xl flex-col gap-16 bg-white/75 px-6 py-16 shadow-lg ring-1 ring-gray-900/5 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:bg-red-300 xl:px-20 dark:bg-white/3 dark:shadow-none dark:ring-white/10">
+          <div className="mx-auto flex max-w-2xl flex-col gap-16 bg-white/75 px-6 py-16 shadow-lg ring-1 ring-gray-900/5 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20 dark:bg-white/3 dark:shadow-none dark:ring-white/10">
             <img
               src="https://res.cloudinary.com/jimbits/image/upload/c_fill,f_auto,q_60,w_400/v1756737703/ncs-painting-edmonton/about-us/ncs-painting-86_fomsiq.png"
               srcSet="https://res.cloudinary.com/jimbits/image/upload/c_fill,f_auto,q_80,w_400/v1756737703/ncs-painting-edmonton/about-us/ncs-painting-86_fomsiq.png 400w,https://res.cloudinary.com/jimbits/image/upload/c_fill,f_auto,q_80,w_550/v1756737703/ncs-painting-edmonton/about-us/ncs-painting-86_fomsiq.png 600w"
@@ -53,20 +53,22 @@ export default function FortSaskatchewan() {
             />
 
             <div className=" ">
-              <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">
-                Fort Saskatchewan Local Home Painting Company
-              </h2>
-              <h3 className="text-4xl font-semibold tracking-tight text-pretty text-gray-950 sm:text-5xl dark:text-white">
-                Fort Saskatchewan House Painting Services
-              </h3>
-              <p className="mt-6 text-lg/8 text-pretty text-gray-600 dark:text-gray-400">
-                NCS Painting has been serving Fort Saskatchewan Alberta since
-                2009. We specialize in Residential painting offering both full
-                interior and exterior painting services.
-              </p>
+              <header className="xs:text-center lg:text-left">
+                <h2 className="text-base/7 font-semibold text-pretty text-indigo-600 sm:mb-1 dark:text-indigo-400">
+                  Fort Saskatchewan House Painters
+                </h2>
+                <h3 className="xs:text-balance text-4xl font-bold tracking-tighter text-balance text-gray-950 sm:text-5xl xl:text-6xl 2xl:text-7xl dark:text-white">
+                  The Fort's Home Painting Company
+                </h3>
+                <p className="mt-3 text-lg/8 text-pretty text-gray-600 dark:text-gray-400">
+                  NCS Painting has been serving Fort Saskatchewan Alberta since
+                  2009. We specialize in Residential painting offering both full
+                  interior and exterior painting services.
+                </p>
+              </header>
               <ul
                 role="list"
-                className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base/7 text-gray-950 sm:grid-cols-2 dark:text-gray-200"
+                className="mx-auto mt-10 w-fit max-w-lg text-sm/7 text-gray-950 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-1 lg:mx-0 xl:w-full dark:text-gray-200"
               >
                 {benefits.map((benefit) => (
                   <li key={benefit} className="flex gap-x-3">
@@ -78,7 +80,7 @@ export default function FortSaskatchewan() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-10 flex gap-6">
+              <div className="xs:justify-center mt-10 flex gap-6 lg:justify-start">
                 <a
                   href="#"
                   className="inline-flex rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:shadow-none"

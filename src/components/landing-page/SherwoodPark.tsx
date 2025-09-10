@@ -37,22 +37,24 @@ export default function SherwoodPark() {
     <div className="overflow-hidden bg-white py-24 sm:py-32 dark:bg-gray-900">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-          <div className="text-center lg:pt-4 lg:pr-8 lg:text-left">
-            <h2 className="text-base/7 font-semibold text-pretty text-indigo-600 dark:text-indigo-400">
-              Professional House Painters Serving Sherwood Park
-            </h2>
-            <h3 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
-              Sherwood Park House Painters
-            </h3>
+          <div className="lg:pt-4 lg:pr-8">
+            <header className="xs:text-center lg:text-left">
+              <h2 className="text-base/7 font-semibold text-pretty text-indigo-600 dark:text-indigo-400">
+                Sherwood Park House Painters
+              </h2>
+              <h3 className="text-3xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl dark:text-white">
+                Sherwood Park Residential Painting Services
+              </h3>
 
-            <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
-              From Emerald Hills estates to Broadmoor bungalows we've helped
-              hundreds of Sherwood Park homeowners protect and beautify your
-              most valuable investment.
-            </p>
+              <p className="xs:mx-auto mt-6 max-w-[520px] text-lg/8 text-gray-600 lg:mx-0 dark:text-gray-300">
+                From Emerald Hills estates to Broadmoor bungalows we've helped
+                hundreds of Sherwood Park homeowners protect and beautify your
+                most valuable investment.
+              </p>
+            </header>
             <ul
               role="list"
-              className="mx-auto mt-10 grid max-w-lg grid-cols-2 gap-x-4 gap-y-1 text-sm/7 text-gray-950 sm:grid-cols-2 lg:mx-0 xl:w-full dark:text-gray-200"
+              className="mx-auto mt-10 w-fit max-w-lg text-sm/7 text-gray-950 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-1 lg:mx-0 xl:w-full dark:text-gray-200"
             >
               {benefits.map((benefit) => (
                 <li key={benefit} className="flex gap-x-3">
@@ -64,16 +66,16 @@ export default function SherwoodPark() {
                 </li>
               ))}
             </ul>
-            <div className="mt-10 flex justify-center gap-6 lg:justify-start">
+            <div className="mt-10 flex justify-center gap-6 text-center lg:justify-start">
               <a
                 href="#"
-                className="inline-flex rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:shadow-none"
+                className="inline-flex rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 lg:w-sm dark:shadow-none"
               >
                 Get Your Free Quote
               </a>
               <a
                 href="#"
-                className="rounded-md border border-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-indigo-600 shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:shadow-none"
+                className="rounded-md border border-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-indigo-600 shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 lg:w-sm dark:shadow-none"
               >
                 Find Out More
               </a>

@@ -48,20 +48,22 @@ export default function StAlbert() {
       </div>
       <div className="relative mx-auto max-w-7xl py-24 sm:py-32 lg:px-8 lg:py-40">
         <div className="pr-6 pl-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pr-0 lg:pl-24 xl:pl-32">
-          <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">
-            Local House Painters St. Albert
-          </h2>
-          <p className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
-            Residential Home Painting Specialists
-          </p>
-          <p className="mt-6 text-base/7 text-gray-600 dark:text-gray-300">
-            Trusted St. Albert painting company specializing in residential
-            interior and exterior services. Fifteen years delivering premium
-            residential painting services with superior quality and results.
-          </p>
+          <header className="xs:text-center lg:text-left">
+            <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">
+              Local House Painters St. Albert
+            </h2>
+            <p className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
+              Residential Home Painting Specialists
+            </p>
+            <p className="mt-6 text-base/7 text-gray-600 dark:text-gray-300">
+              Trusted St. Albert painting company specializing in residential
+              interior and exterior services. Fifteen years delivering premium
+              residential painting services with superior quality and results.
+            </p>
+          </header>
           <ul
             role="list"
-            className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base/7 text-gray-950 sm:grid-cols-2 dark:text-gray-200"
+            className="mx-auto mt-10 w-fit max-w-lg text-sm/7 text-gray-950 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-1 lg:mx-0 xl:w-full dark:text-gray-200"
           >
             {benefits.map((benefit) => (
               <li key={benefit} className="flex gap-x-3">
@@ -73,7 +75,7 @@ export default function StAlbert() {
               </li>
             ))}
           </ul>
-          <div className="mt-10 flex gap-6">
+          <div className="xs:justify-center mt-10 flex gap-6 lg:justify-start">
             <a
               href="#"
               className="inline-flex rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-white dark:text-gray-900 dark:shadow-none hover:dark:text-white"
