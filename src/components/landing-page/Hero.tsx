@@ -1,87 +1,44 @@
 import { NCSPaintingLogo } from "@/icons";
+import Link from "next/link";
 export default function Hero() {
   return (
-    <div className="relative isolate overflow-hidden bg-white dark:bg-gray-900">
-      <svg
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 size-full mask-[radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-200 dark:stroke-white/10"
-      >
-        <defs>
-          <pattern
-            x="50%"
-            y={-1}
-            id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc"
-            width={200}
-            height={200}
-            patternUnits="userSpaceOnUse"
-          >
-            <path d="M.5 200V.5H200" fill="none" />
-          </pattern>
-        </defs>
-        <svg
-          x="50%"
-          y={-1}
-          className="overflow-visible fill-gray-50 dark:fill-gray-800/20"
-        >
-          <path
-            d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-            strokeWidth={0}
-          />
-        </svg>
-        <rect
-          fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"
-          width="100%"
-          height="100%"
-          strokeWidth={0}
-        />
-      </svg>
-      <div
-        aria-hidden="true"
-        className="absolute top-10 left-[calc(50%-4rem)] -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:top-[calc(80%-30rem)] lg:left-48 xl:left-[calc(0%-24rem)]"
-      >
-        <div
-          style={{
-            clipPath:
-              "polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)",
-          }}
-          className="aspect-1108/632 w-277 bg-linear-to-r from-[#4626fb] to-[#221abc] opacity-20"
-        />
-      </div>
-      <header className="mx-auto max-w-7xl px-6 pt-10 pb-24 md:grid md:grid-cols-2 md:grid-rows-[auto_1fr] lg:grid-rows-[300px_300px] lg:px-8">
+    // Fixed version with proper overflow control
+    <div className="relative bg-orange-500">
+      <header className="mx-auto max-w-7xl px-3 pb-24 md:grid md:grid-cols-2 md:grid-rows-[auto_1fr] lg:grid-rows-[300px_300px] lg:px-8">
         {/* HEADING 1 */}
         <div className="self-end">
-          <p className="gradient-text dark:gradient-text text-center text-6xl/tight font-extrabold uppercase sm:mb-3 sm:text-6xl md:m-0 md:text-left md:text-5xl lg:text-[clamp(48px,5vw,80px)]">
+          <p className="gradient-text dark:gradient-text xs:text-6xl/tight text-center text-4xl font-extrabold uppercase sm:mb-3 sm:text-6xl md:m-0 md:text-left md:text-5xl lg:text-[clamp(48px,5vw,80px)]">
             NCS Painting
           </p>
-          <h1 className="text-center text-lg leading-6 font-bold text-pretty text-stone-600/85 sm:text-2xl md:text-left md:text-xl lg:text-2xl dark:text-white">
+          <h1 className="text-center leading-tight font-bold text-pretty text-stone-600/85 sm:text-2xl md:text-left md:text-xl lg:text-2xl/6 dark:text-white">
             Edmontons Complete Interior &
             <span className="block">Exterior House Painting Services</span>
           </h1>
         </div>
 
         {/* LOGO */}
-        <NCSPaintingLogo className="mx-auto my-4 h-2/3 w-2/3 md:col-start-2 md:col-end-3 md:row-span-2 md:my-0 md:h-full md:w-full md:self-center" />
+        <NCSPaintingLogo className="mx-auto my-5 w-[80%] max-w-[320px] md:col-start-2 md:col-end-3 md:row-span-2 md:my-0 md:h-full md:w-full md:max-w-none md:self-center" />
 
         {/* CALL TO ACTION */}
-        <div className="max-w-2xl text-center md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-3 lg:mx-0 lg:self-start">
-          <p className="xl: text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 md:text-left md:text-xl/tight lg:mt-4 dark:text-gray-200">
-            NCS Painting specializes exclusively in residential home painting.
-            We are dedicated to providing quality premium materials that protect
-            your home inside and out.
+        <div className="mx-auto max-w-2xl md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-3 md:mx-0 lg:mx-0 lg:self-start">
+          <p className="xs:w-[85%] mx-auto mb-5 w-[98%] text-center text-[17px]/5 font-medium tracking-tight text-gray-600 sm:my-3 sm:w-[80%] sm:text-xl/5 md:mx-0 md:text-left md:text-xl/tight lg:mt-4 lg:mb-6 dark:text-gray-200">
+            We are exclusively an interior and exterior home painting services.
+            Dedicated to quality, care, and satisfaction.
           </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6 md:justify-start">
-            <a
-              href="#"
-              className="hover:bg-rose-600-500 rounded-md border border-rose-500 bg-rose-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs transition-colors hover:border-rose-700 hover:bg-rose-700 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-rose-500 dark:text-white dark:hover:bg-rose-700 dark:focus-visible:outline-red-500"
+
+          <div className="mx-auto flex w-[90%] flex-col gap-4">
+            <Link
+              href="tel:+1234567890"
+              className="text-md block w-full rounded-md border border-rose-500 bg-rose-500 px-3.5 py-2.5 text-center font-semibold text-white shadow-xs transition-colors hover:border-rose-700 hover:bg-rose-700 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-rose-500 dark:text-white dark:hover:bg-rose-700 dark:focus-visible:outline-red-500"
             >
               Call (780)-722-6555
-            </a>
-            <a
-              href="#"
-              className="rounded-md border border-indigo-500 bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-indigo-700 hover:text-white dark:border-indigo-400 dark:bg-indigo-400 dark:text-white hover:dark:border-indigo-500 hover:dark:bg-indigo-500"
+            </Link>
+            <button
+              type="button"
+              className="text-md w-full rounded-md border border-indigo-500 bg-indigo-500 px-3.5 py-2.5 font-semibold text-white transition-colors hover:bg-indigo-700 hover:text-white dark:border-indigo-400 dark:bg-indigo-400 dark:text-white hover:dark:border-indigo-500 hover:dark:bg-indigo-500"
             >
               Book Quote Online
-            </a>
+            </button>
           </div>
         </div>
       </header>

@@ -12,7 +12,7 @@ interface AppBarProps {
 function AppBar({ className }: AppBarProps) {
   const [dark, setDark] = useDarkMode();
   return (
-    <div className={cn("px-2 py-3 dark:bg-gray-900", className)}>
+    <div className={cn("px-2 pt-3 dark:bg-gray-900", className)}>
       <ul className={cn("flex items-center justify-between")}>
         <li className=" ">
           <RollOnIcon className="w-12 fill-slate-900 dark:fill-white" />

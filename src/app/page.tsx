@@ -28,22 +28,22 @@ import ResponsiveGuideBar from "@/lib/ResponsiveGuide";
 // };
 export default function Home() {
   return (
-    <div>
-      <ResponsiveGuideBar position="top" className="h-3" />
-      <AppBar />
+    <div className="overflow-x: hidden;">
+      <ResponsiveGuideBar />
+      <AppBar className="mb-3" />
 
       <Hero />
       <main>
         <AboutUs />
         <OurServices />
         <Preview />
-        <Reviews />
+        {/*  <Reviews />
         <SherwoodPark />
         <Faqs />
         <FortSaskatchewan />
         <PaintingEstimate />
         <StAlbert />
-        <Footer />
+        <Footer /> */}
       </main>
     </div>
   );

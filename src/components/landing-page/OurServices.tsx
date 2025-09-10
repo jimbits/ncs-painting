@@ -70,19 +70,21 @@ export default function OurServices() {
     <section className="relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8 dark:bg-gray-900">
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 top-28 -z-10 transform-gpu overflow-hidden px-48 blur-3xl"
+        className="absolute inset-x-0 top-28 -z-10 transform-gpu blur-3xl"
       >
-        <div className="clipper mx-auto aspect-1155/678 w-288.75 bg-linear-to-tr from-[#564af4] to-[#0972db] opacity-30" />
+        <div className="clipper /* max width ~1152px */ mx-auto aspect-[1155/678] w-full max-w-[72rem] bg-gradient-to-tr from-[#564af4] to-[#0972db] px-6 opacity-30 sm:px-12 lg:px-24 xl:px-48" />
       </div>
+
       <header className="mx-auto max-w-4xl sm:text-center">
         <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-blue-600">
-          NCS Painting Services Edmoton
+          House Painting Services Close To You.
         </h2>
 
-        <p className="mt-2 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">
+        <p className="text-4xl font-extrabold tracking-tight text-pretty text-gray-900 sm:text-6xl">
           Services At A Glance
         </p>
-        <h3 className="mx-auto mt-6 max-w-2xl text-lg font-medium text-pretty text-gray-600 sm:text-xl/8 dark:text-gray-400">
+
+        <h3 className="mx-auto mt-6 max-w-2xl text-xl/snug font-medium text-pretty text-gray-600 sm:text-xl/8 dark:text-gray-400">
           Affordable Interior & Exterior House Painting Services in Edmonton,
           St. Albert, Sherwood Park, and Stony Plain.
         </h3>
@@ -120,7 +122,7 @@ export default function OurServices() {
                   tier.featured
                     ? "text-white dark:text-gray-900"
                     : "text-gray-900 dark:text-white",
-                  "text-5xl font-semibold tracking-tighter"
+                  "text-4xl font-extrabold tracking-tight"
                 )}
               >
                 {tier.title}
