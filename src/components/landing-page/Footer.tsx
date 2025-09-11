@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
-import { Logo } from "@/icons/";
+import Logo from "@/icons/ncs-painting-logo.svg";
 interface FooterProps {
   children?: ReactNode;
   className?: string;

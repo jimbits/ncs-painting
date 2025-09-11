@@ -1,4 +1,13 @@
+/** @type {import('next').NextConfig} */
 import type { NextConfig } from "next";
+import bundleAnalyzer from "@next/bundle-analyzer";
+
+// next.config.js
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
+
+// next.config.js
 
 const nextConfig: NextConfig = {
   typescript: {
@@ -86,4 +95,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);

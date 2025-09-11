@@ -1,49 +1,72 @@
+import { lazy, Suspense } from "react";
 import AppBar from "@/components/landing-page/AppBar";
-import OurServices from "@/components/landing-page/OurServices";
-import AboutUs from "@/components/landing-page/AboutUs";
-import Reviews from "@/components/landing-page/Reviews";
-import Preview from "@/components/landing-page/Preview";
-import Faqs from "@/components/landing-page/Faqs";
-import GetQuote from "@/components/landing-page/GetQuote";
 import Hero from "@/components/landing-page/Hero";
-import StAlbert from "@/components/landing-page/StAlbert";
-import SherwoodPark from "@/components/landing-page/SherwoodPark";
-import FortSaskatchewan from "@/components/landing-page/FortSaskatchewan";
-import PaintingEstimate from "@/components/landing-page/PaintingEstimate";
-import Footer from "@/components/landing-page/Footer";
-import ResponsiveGuideBar from "@/lib/ResponsiveGuide";
 
-// app/page.tsx
-// import type { Metadata } from "next";
+// Lazy load components that aren't immediately visible
+const AboutUs = lazy(() => import("@/components/landing-page/AboutUs"));
+const OurServices = lazy(() => import("@/components/landing-page/OurServices"));
+const Reviews = lazy(() => import("@/components/landing-page/Reviews"));
+const Preview = lazy(() => import("@/components/landing-page/Preview"));
+const Faqs = lazy(() => import("@/components/landing-page/Faqs"));
+const SherwoodPark = lazy(
+  () => import("@/components/landing-page/SherwoodPark")
+);
+const FortSaskatchewan = lazy(
+  () => import("@/components/landing-page/FortSaskatchewan")
+);
+const StAlbert = lazy(() => import("@/components/landing-page/StAlbert"));
+const Footer = lazy(() => import("@/components/landing-page/Footer"));
 
-// export const metadata: Metadata = {
-//   other: {
-//     "dns-prefetch": "//res.cloudinary.com",
-//     preconnect: "https://res.cloudinary.com",
-//     "preload-desktop":
-//       "https://res.cloudinary.com/jimbits/image/upload/c_limit,f_auto,g_auto,q_60,t_hero-mobile,w_1200/v1756580859/ncs-painting-edmonton/landing/ncs-painting-edmoton-house-painting.png",
-//     "preload-mobile":
-//       "https://res.cloudinary.com/jimbits/image/upload/c_limit,e_blur:30,g_auto,f_auto,q_60,w_600/v1756580859/ncs-painting-edmonton/landing/ncs-painting-edmoton-house-painting.png",
-//   },
-// };
+// Simple loading component
+const SectionLoader = () => (
+  <div className="flex items-center justify-center py-8">
+    <div className="h-8 w-8 animate-spin rounded-full border-4 border-indigo-600 border-t-transparent"></div>
+  </div>
+);
+
 export default function Home() {
   return (
-    <div className="overflow-x: hidden;">
-      {/* <ResponsiveGuideBar /> */}
+    <div className="overflow-x-hidden">
+      {/* Keep critical above-the-fold content loaded immediately */}
       <AppBar className="mb-3" />
-
       <Hero />
+
       <main>
-        <AboutUs />
-        <OurServices />
-        <Preview />
-        <Reviews />
-        <SherwoodPark />
-        <Faqs />
-        <FortSaskatchewan />
-        {/*<PaintingEstimate />*/}
-        <StAlbert />
-        <Footer />
+        <Suspense fallback={<SectionLoader />}>
+          <AboutUs />
+        </Suspense>
+
+        <Suspense fallback={<SectionLoader />}>
+          <OurServices />
+        </Suspense>
+
+        <Suspense fallback={<SectionLoader />}>
+          <Preview />
+        </Suspense>
+
+        <Suspense fallback={<SectionLoader />}>
+          <Reviews />
+        </Suspense>
+
+        <Suspense fallback={<SectionLoader />}>
+          <SherwoodPark />
+        </Suspense>
+
+        <Suspense fallback={<SectionLoader />}>
+          <Faqs />
+        </Suspense>
+
+        <Suspense fallback={<SectionLoader />}>
+          <FortSaskatchewan />
+        </Suspense>
+
+        <Suspense fallback={<SectionLoader />}>
+          <StAlbert />
+        </Suspense>
+
+        <Suspense fallback={<SectionLoader />}>
+          <Footer />
+        </Suspense>
       </main>
     </div>
   );

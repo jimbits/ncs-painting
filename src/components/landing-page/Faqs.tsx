@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
-import { FaqIcon } from "@/icons";
+import FaqIcon from "@/icons/faq.svg";
 interface FaqProps {
   children?: ReactNode;
   className?: string;

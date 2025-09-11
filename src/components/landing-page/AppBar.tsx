@@ -2,7 +2,8 @@
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 import RollOnIcon from "@/icons/new.svg";
-import { Menu, PhoneCallIcon, User2Icon } from "lucide-react";
+// Replace with Heroicons:
+import { Bars3Icon, UserIcon } from "@heroicons/react/24/outline";
 import { useDarkMode } from "@/hooks/useDarkMode";
 interface AppBarProps {
   children?: ReactNode;
@@ -19,9 +20,9 @@ function AppBar({ className }: AppBarProps) {
         </li>
 
         <li className="">
-          <Menu className="h-10 w-10 text-slate-900 lg:hidden dark:text-white" />
+          <Bars3Icon className="h-10 w-10 text-slate-900 lg:hidden dark:text-white" />
           <figure className="group hidden select-none lg:flex lg:flex-col lg:items-center">
-            <User2Icon className="w-6 group-hover:stroke-slate-900 dark:text-white" />
+            <UserIcon className="w-6 group-hover:stroke-slate-900 dark:text-white" />
             <figcaption className="text-xs group-hover:text-indigo-600 dark:text-white">
               <button
                 type="button"

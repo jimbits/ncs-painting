@@ -1,4 +1,4 @@
-import { NCSPaintingLogo } from "@/icons";
+import NCSPaintingLogo from "@/icons/ncs-painting-logo.svg";
 import Link from "next/link";
 export default function Hero() {
   return (

@@ -1,4 +1,6 @@
-import { PaintBrushIcon, PaintRollerIcon, PaintBucketIcon } from "@/icons";
+import PaintBrushIcon from "@/icons/paint-brush.svg";
+import PaintBucketIcon from "@/icons/paint-bucket.svg";
+import PaintRollerIcon from "@/icons/paint-roller.svg";
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
 
 const features = [
