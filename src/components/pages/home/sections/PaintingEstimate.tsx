@@ -1,12 +1,12 @@
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 
-interface PaintingCalculatorProps {
+interface PaintingEstimateProps {
   children?: ReactNode;
   className?: string;
 }
 
-function PaintingCalculator({ className }: PaintingCalculatorProps) {
+function PaintingEstimate({ className }: PaintingEstimateProps) {
   return (
     <div className="bg-indigo-100 dark:bg-white">
       <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 md:py-72 lg:flex lg:items-center lg:justify-between lg:px-8">

@@ -1,0 +1,15 @@
+export { default as AboutUs } from "./AboutUs";
+export { default as Faq } from "./Faqs";
+export { default as Footer } from "./Footer";
+export { default as FortSaskatchewan } from "./FortSaskatchewan";
+export { default as GetQuote } from "./GetQuote";
+export { default as Hero } from "./Hero";
+export { default as OurServices } from "./OurServices";
+export { default as PaintingEstimate } from "./PaintingEstimate";
+export { default as Preview } from "./Preview";
+export { default as Reviews } from "./Reviews";
+export { default as ServiceLocations } from "./ServiceLocations";
+export { default as Services } from "./Services";
+export { default as SherwoodPark } from "./SherwoodPark";
+export { default as StAlbert } from "./StAlbert";
+export { default as WhyChooseUs } from "./WhyChooseUs";

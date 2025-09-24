@@ -1,0 +1,124 @@
+{
+  "reviews": [
+    {
+      "id": "rev-001",
+      "rating": 5,
+      "content": "Absolutely amazing kitchen renovation! The team was professional, on time, and the results exceeded our expectations. Our new kitchen is the heart of our home now.",
+      "date": "2025-08-22T14:30:00.000Z",
+      "projectType": "Kitchen Renovation",
+      "reviewer": {
+        "name": "Sarah Johnson",
+        "city": "Vancouver",
+        "email": "sarah.johnson@email.com"
+      }
+    },
+    {
+      "id": "rev-002",
+      "rating": 4,
+      "content": "Great attention to detail on our bathroom remodel. The only minor issue was a small delay due to material delivery, but the final result was worth the wait.",
+      "date": "2025-08-15T09:15:00.000Z",
+      "projectType": "Bathroom Remodel",
+      "reviewer": {
+        "name": "Mike Chen",
+        "city": "Calgary",
+        "email": "mike.chen@email.com"
+      }
+    },
+    {
+      "id": "rev-003",
+      "rating": 5,
+      "content": "Our basement conversion turned out fantastic! Now we have a beautiful family room and home office. The project was completed on budget and ahead of schedule.",
+      "date": "2025-07-28T16:45:00.000Z",
+      "projectType": "Basement Conversion",
+      "reviewer": {
+        "name": "Emily Rodriguez",
+        "city": "Toronto",
+        "email": "emily.rodriguez@email.com"
+      }
+    },
+    {
+      "id": "rev-004",
+      "rating": 3,
+      "content": "The deck construction was okay. The work quality was good but communication could have been better. Had to follow up multiple times for updates on progress.",
+      "date": "2025-07-10T11:20:00.000Z",
+      "projectType": "Deck Construction",
+      "reviewer": {
+        "name": "David Thompson",
+        "city": "Edmonton",
+        "email": "david.thompson@email.com"
+      }
+    },
+    {
+      "id": "rev-005",
+      "rating": 5,
+      "content": "Incredible whole house renovation! Every room was transformed beautifully. The team handled everything professionally and kept us informed throughout the entire process.",
+      "date": "2025-06-30T13:00:00.000Z",
+      "projectType": "Whole House Renovation",
+      "reviewer": {
+        "name": "Lisa Wong",
+        "city": "Ottawa",
+        "email": "lisa.wong@email.com"
+      }
+    },
+    {
+      "id": "rev-006",
+      "rating": 4,
+      "content": "Very happy with our new master bedroom suite. The walk-in closet and ensuite bathroom are exactly what we wanted. Minor punch list items were addressed quickly.",
+      "date": "2025-06-18T10:30:00.000Z",
+      "projectType": "Master Suite Addition",
+      "reviewer": {
+        "name": "Robert Kim",
+        "city": "Montreal",
+        "email": "robert.kim@email.com"
+      }
+    },
+    {
+      "id": "rev-007",
+      "rating": 5,
+      "content": "The home office conversion was perfect for our remote work needs. Great use of space and excellent lighting solutions. Highly recommend for anyone working from home.",
+      "date": "2025-05-25T15:45:00.000Z",
+      "projectType": "Home Office Conversion",
+      "reviewer": {
+        "name": "Jennifer Adams",
+        "city": "Winnipeg",
+        "email": "jennifer.adams@email.com"
+      }
+    },
+    {
+      "id": "rev-008",
+      "rating": 4,
+      "content": "Good experience with the garage renovation. Now we have a functional workshop and storage space. The insulation and electrical work were done to high standards.",
+      "date": "2025-05-12T08:15:00.000Z",
+      "projectType": "Garage Renovation",
+      "reviewer": {
+        "name": "Mark Davis",
+        "city": "Halifax",
+        "email": "mark.davis@email.com"
+      }
+    },
+    {
+      "id": "rev-009",
+      "rating": 5,
+      "content": "Outstanding flooring installation throughout our main floor. The hardwood looks stunning and the transition between rooms is seamless. Excellent craftsmanship!",
+      "date": "2025-04-30T12:00:00.000Z",
+      "projectType": "Flooring Installation",
+      "reviewer": {
+        "name": "Amanda Foster",
+        "city": "Victoria",
+        "email": "amanda.foster@email.com"
+      }
+    },
+    {
+      "id": "rev-010",
+      "rating": 4,
+      "content": "The exterior painting and siding repair refreshed our home's curb appeal significantly. Professional crew and quality materials used throughout the project.",
+      "date": "2025-04-15T14:20:00.000Z",
+      "projectType": "Exterior Renovation",
+      "reviewer": {
+        "name": "Chris Martinez",
+        "city": "Saskatoon",
+        "email": "chris.martinez@email.com"
+      }
+    }
+  ]
+}

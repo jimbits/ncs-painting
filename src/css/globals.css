@@ -1,5 +1,5 @@
-@import "tailwindcss";
- @custom-variant dark (&:where(.dark, .dark *));
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -15,25 +15,30 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
- 
-@layer utilities {
-  .h-dvh { height: 100dvh; }
-  .min-h-dvh { min-height: 100dvh; }
-  .h-svh { height: 100svh; }
-  .min-h-svh { min-height: 100svh; }
-}
- 
 
- 
+@layer utilities {
+  .h-dvh {
+    height: 100dvh;
+  }
+  .min-h-dvh {
+    min-height: 100dvh;
+  }
+  .h-svh {
+    height: 100svh;
+  }
+  .min-h-svh {
+    min-height: 100svh;
+  }
+}
 
 @layer utilities {
   .text-copy {
     @apply mt-6 mb-8 text-base text-gray-600 dark:text-gray-400;
   }
-  .responsive{
-    @apply  xs:bg-pink-500 sm:bg-red-500 md:bg-orange-500 lg:bg-lime-500 xl:bg-cyan-500 2xl:bg-blue-500
+  .responsive {
+    @apply xs:bg-pink-500 sm:bg-red-500 md:bg-orange-500 lg:bg-lime-500 xl:bg-cyan-500 2xl:bg-blue-500;
   }
-    .gradient-text {
+  .gradient-text {
     background: linear-gradient(
       270deg,
       theme(colors.blue.600) 20%,
@@ -53,14 +58,30 @@
     color: theme(colors.white);
   }
 }
- 
+
 body {
   background: var(--background);
   color: var(--foreground);
 }
 
-
-.clipper{
+.clipper {
   background-color: red;
-  clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%);
+  clip-path: polygon(
+    74.1% 44.1%,
+    100% 61.6%,
+    97.5% 26.9%,
+    85.5% 0.1%,
+    80.7% 2%,
+    72.5% 32.5%,
+    60.2% 62.4%,
+    52.4% 68.1%,
+    47.5% 58.3%,
+    45.2% 34.5%,
+    27.5% 76.7%,
+    0.1% 64.9%,
+    17.9% 100%,
+    27.6% 76.8%,
+    76.1% 97.7%,
+    74.1% 44.1%
+  );
 }

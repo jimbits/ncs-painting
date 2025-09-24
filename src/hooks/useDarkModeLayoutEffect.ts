@@ -1,24 +1,22 @@
 // hooks/useDarkMode.ts
 'use client'
 
-import {useEffect, useState} from 'react'
+import {useLayoutEffect, useState} from 'react'
 
 function getInitialTheme(): boolean {
 	if (typeof window !== 'undefined') {
 		const stored = localStorage.getItem('theme')
 		if (stored) return stored === 'dark'
-
-		// fallback: system preference
 		return window.matchMedia('(prefers-color-scheme: dark)').matches
 	}
-	return false // default for SSR
+	return false
 }
 
 export function useDarkMode() {
 	const [isDark, setIsDark] = useState<boolean>(getInitialTheme)
 
-	// Apply theme to <html>
-	useEffect(() => {
+	// Apply theme before paint
+	useLayoutEffect(() => {
 		const root = document.documentElement
 		if (isDark) {
 			root.classList.add('dark')
@@ -29,21 +27,9 @@ export function useDarkMode() {
 		}
 	}, [isDark])
 
-	// Sync across tabs
-	useEffect(() => {
-		const handler = (e: StorageEvent) => {
-			if (e.key === 'theme') {
-				setIsDark(e.newValue === 'dark')
-			}
-		}
-		window.addEventListener('storage', handler)
-		return () => window.removeEventListener('storage', handler)
-	}, [])
+	const toggle = () => setIsDark((prev) => !prev)
+	const setDark = () => setIsDark(true)
+	const setLight = () => setIsDark(false)
 
-	return {
-		isDark,
-		toggle: () => setIsDark((prev) => !prev),
-		setDark: () => setIsDark(true),
-		setLight: () => setIsDark(false),
-	}
+	return {isDark, toggle, setDark, setLight}
 }

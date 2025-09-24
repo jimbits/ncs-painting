@@ -1,37 +1,37 @@
-import PaintBrushIcon from "@/icons/paint-brush.svg";
-import PaintBucketIcon from "@/icons/paint-bucket.svg";
-import PaintRollerIcon from "@/icons/paint-roller.svg";
-import { CheckCircleIcon } from "@heroicons/react/20/solid";
+import PaintBrushIcon from '@/icons/paint-brush.svg';
+import PaintBucketIcon from '@/icons/paint-bucket.svg';
+import PaintRollerIcon from '@/icons/paint-roller.svg';
+import { CheckCircleIcon } from '@heroicons/react/20/solid';
 
 const features = [
   {
-    name: "Sherwood Park Interior Painting Services",
+    name: 'Sherwood Park Interior Painting Services',
     description:
-      "Transform your Sherwood Park home with our expert interior painting services. From Emerald Hills to Broadmoor, we deliver quality craftsmanship for walls, ceilings, trim, and cabinet refinishing that Strathcona County homeowners trust.",
+      'Transform your Sherwood Park home with our expert interior painting services. From Emerald Hills to Broadmoor, we deliver quality craftsmanship for walls, ceilings, trim, and cabinet refinishing that Strathcona County homeowners trust.',
     icon: PaintBrushIcon,
   },
   {
-    name: "Exterior House Painting Sherwood Park",
+    name: 'Exterior House Painting Sherwood Park',
     description:
       "Protect your investment with professional exterior painting services designed for Alberta's climate. Our Sherwood Park painting contractors specialize in siding, trim, and metal roof painting with guaranteed results.",
     icon: PaintRollerIcon,
   },
   {
-    name: "Why Choose NCS Painting in Sherwood Park",
+    name: 'Why Choose NCS Painting in Sherwood Park',
     description:
       "Family-owned and operated since 2009, we're Sherwood Park's trusted residential painters. Eco-friendly paints, competitive pricing, and 15 years of local experience serving Emerald Hills, Broadmoor, and all Strathcona County neighborhoods.",
     icon: PaintBucketIcon,
   },
 ];
 const benefits = [
-  "Free Estimate",
-  "Transparent Pricing",
-  "Flexible work hours",
-  "Low-VOC Paint Options",
-  "30+ years experience",
-  "Licensed & Insured",
-  "Family owned business",
-  "Work Quality Guarantee",
+  'Free Estimate',
+  'Transparent Pricing',
+  'Flexible work hours',
+  'Low-VOC Paint Options',
+  '30+ years experience',
+  'Licensed & Insured',
+  'Family owned business',
+  'Work Quality Guarantee',
 ];
 
 export default function SherwoodPark() {
@@ -48,7 +48,7 @@ export default function SherwoodPark() {
                 Sherwood Park Residential Painting Services
               </h3>
 
-              <p className="xs:mx-auto mt-6 max-w-[520px] text-lg/8 text-gray-600 lg:mx-0 dark:text-gray-300">
+              <p className="mt-6 max-w-[520px] text-lg/8 text-gray-600 xs:mx-auto lg:mx-0 dark:text-gray-300">
                 From Emerald Hills estates to Broadmoor bungalows we've helped
                 hundreds of Sherwood Park homeowners protect and beautify your
                 most valuable investment.
@@ -99,7 +99,7 @@ export default function SherwoodPark() {
             width="870"
             height="738"
             alt="room being painted red with ladder, red paint, roller and brush at the center of the room on the floor"
-            className="w-full max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 md:-ml-4 md:w-3xl lg:-ml-0 lg:block dark:ring-white/10"
+            className="w-full max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 md:-ml-4 lg:-ml-0 lg:block dark:ring-white/10"
             loading="lazy"
             decoding="async"
             fetchPriority="low"
