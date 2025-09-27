@@ -1,39 +1,39 @@
-import { cn } from "@/lib/utils";
-import { ReactNode } from "react";
-import Logo from "@/icons/ncs-painting-logo.svg";
+import { cn } from '@/lib/utils.ts';
+import { ReactNode } from 'react';
+import Link from 'next/link';
 interface FooterProps {
   children?: ReactNode;
   className?: string;
 }
 const navigation = {
   solutions: [
-    { name: "Marketing", href: "#" },
-    { name: "Analytics", href: "#" },
-    { name: "Automation", href: "#" },
-    { name: "Commerce", href: "#" },
-    { name: "Insights", href: "#" },
+    { name: 'Marketing', href: '/' },
+    { name: 'Analytics', href: '/' },
+    { name: 'Automation', href: '/' },
+    { name: 'Commerce', href: '/' },
+    { name: 'Insights', href: '/' },
   ],
   support: [
-    { name: "Submit ticket", href: "#" },
-    { name: "Documentation", href: "#" },
-    { name: "Guides", href: "#" },
+    { name: 'Submit ticket', href: '/' },
+    { name: 'Documentation', href: '/' },
+    { name: 'Guides', href: '/' },
   ],
   company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Jobs", href: "#" },
-    { name: "Press", href: "#" },
+    { name: 'About', href: '/' },
+    { name: 'Blog', href: '/' },
+    { name: 'Jobs', href: '/' },
+    { name: 'Press', href: '/' },
   ],
   legal: [
-    { name: "Terms of service", href: "#" },
-    { name: "Privacy policy", href: "#" },
-    { name: "License", href: "#" },
+    { name: 'Terms of service', href: '/' },
+    { name: 'Privacy policy', href: '/' },
+    { name: 'License', href: '/' },
   ],
 };
 
-export default function Footer() {
+export default function Footer({ className }: FooterProps) {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className={cn('bg-gray-900 py-14 text-white', className)}>
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Contact & Business Info */}
@@ -46,22 +46,22 @@ export default function Footer() {
 
             <div className="mb-4 space-y-2">
               <p className="text-sm">
-                <span className="font-semibold">Phone:</span>{" "}
-                <a
+                <span className="font-semibold">Phone:</span>{' '}
+                <Link
                   href="tel:7807225544"
                   className="text-blue-400 transition-colors hover:text-blue-300"
                 >
                   (780) 722-5544
-                </a>
+                </Link>
               </p>
               <p className="text-sm">
-                <span className="font-semibold">Email:</span>{" "}
-                <a
+                <span className="font-semibold">Email:</span>{' '}
+                <Link
                   href="mailto:info@ncspainting.com"
                   className="text-blue-400 transition-colors hover:text-blue-300"
                 >
                   info@ncspainting.com
-                </a>
+                </Link>
               </p>
               <p className="text-sm">
                 <span className="font-semibold">Service Areas:</span> Edmonton,
@@ -81,60 +81,60 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a
-                  href="/interior-painting-edmonton"
+                <Link
+                  href="/"
                   className="text-gray-300 transition-colors hover:text-white"
                 >
                   Interior Painting
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/exterior-painting-edmonton"
+                <Link
+                  href="/"
                   className="text-gray-300 transition-colors hover:text-white"
                 >
                   Exterior House Painting
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/cabinet-refinishing-edmonton"
+                <Link
+                  href="/"
                   className="text-gray-300 transition-colors hover:text-white"
                 >
                   Cabinet Refinishing
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/deck-staining-edmonton"
+                <Link
+                  href="/"
                   className="text-gray-300 transition-colors hover:text-white"
                 >
                   Deck & Fence Staining
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/drywall-repair-edmonton"
+                <Link
+                  href="/"
                   className="text-gray-300 transition-colors hover:text-white"
                 >
                   Drywall Repair
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/power-washing-edmonton"
+                <Link
+                  href="/"
                   className="text-gray-300 transition-colors hover:text-white"
                 >
                   Power Washing
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/commercial-painting-edmonton"
+                <Link
+                  href="/"
                   className="text-gray-300 transition-colors hover:text-white"
                 >
                   Commercial Painting
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -146,36 +146,36 @@ export default function Footer() {
             </h4>
             <ul className="mb-6 space-y-2 text-sm">
               <li>
-                <a
-                  href="/edmonton-painters"
+                <Link
+                  href="/"
                   className="text-gray-300 transition-colors hover:text-white"
                 >
                   Edmonton House Painters
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/sherwood-park-painters"
+                <Link
+                  href="/"
                   className="text-gray-300 transition-colors hover:text-white"
                 >
                   Sherwood Park Painting
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/fort-saskatchewan-painters"
+                <Link
+                  href="/"
                   className="text-gray-300 transition-colors hover:text-white"
                 >
                   Fort Saskatchewan Painters
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/st-albert-painters"
+                <Link
+                  href="/"
                   className="text-gray-300 transition-colors hover:text-white"
                 >
                   St. Albert Painting Services
-                </a>
+                </Link>
               </li>
             </ul>
 
@@ -197,87 +197,87 @@ export default function Footer() {
             <h4 className="mb-4 text-lg font-semibold text-white">Company</h4>
             <ul className="mb-6 space-y-2 text-sm">
               <li>
-                <a
-                  href="/about-ncs-painting"
+                <Link
+                  href="#about-us"
                   className="text-gray-300 transition-colors hover:text-white"
                 >
                   About NCS Painting
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/painting-gallery"
+                <Link
+                  href="/"
                   className="text-gray-300 transition-colors hover:text-white"
                 >
                   Project Gallery
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/customer-reviews"
+                <Link
+                  href="#reviews"
                   className="text-gray-300 transition-colors hover:text-white"
                 >
                   Customer Reviews
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/painting-tips-blog"
+                <Link
+                  href="/"
                   className="text-gray-300 transition-colors hover:text-white"
                 >
                   Painting Tips & Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/contact-painters-edmonton"
+                <Link
+                  href="/"
                   className="text-gray-300 transition-colors hover:text-white"
                 >
                   Contact Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/free-painting-estimate"
+                <Link
+                  href="/"
                   className="text-gray-300 transition-colors hover:text-white"
                 >
                   Free Estimate
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/painting-warranty"
+                <Link
+                  href="/"
                   className="text-gray-300 transition-colors hover:text-white"
                 >
                   Work Warranty
-                </a>
+                </Link>
               </li>
             </ul>
 
             <div>
               <h5 className="text-md mb-3 font-medium text-white">Follow Us</h5>
               <div className="flex space-x-4 text-sm">
-                <a
-                  href="#"
+                <Link
+                  href="/"
                   className="text-gray-300 transition-colors hover:text-blue-400"
                   aria-label="Facebook"
                 >
                   Facebook
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  href="/"
                   className="text-gray-300 transition-colors hover:text-red-400"
                   aria-label="Google Business"
                 >
                   Google
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  href="/"
                   className="text-gray-300 transition-colors hover:text-yellow-400"
                   aria-label="HomeStars"
                 >
                   HomeStars
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -300,31 +300,25 @@ export default function Footer() {
               <p className="text-gray-300">
                 <span className="font-semibold text-white">
                   Ready to transform your home?
-                </span>{" "}
-                <a
+                </span>{' '}
+                <Link
                   href="tel:7807225544"
                   className="font-medium text-blue-400 transition-colors hover:text-blue-300"
                 >
                   Call (780) 722-5544
-                </a>{" "}
+                </Link>{' '}
                 for your free painting estimate!
               </p>
             </div>
 
             <div className="space-x-2 text-sm text-gray-400">
-              <a
-                href="/privacy-policy"
-                className="transition-colors hover:text-white"
-              >
+              <Link href="/" className="transition-colors hover:text-white">
                 Privacy Policy
-              </a>
+              </Link>
               <span>|</span>
-              <a
-                href="/terms-of-service"
-                className="transition-colors hover:text-white"
-              >
+              <Link href="/" className="transition-colors hover:text-white">
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
         </div>

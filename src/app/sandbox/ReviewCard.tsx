@@ -1,164 +1,166 @@
-// components/ReviewCardVariants.tsx
-'use client'
+import { cn } from '@/lib/utils';
+import { StarIcon } from '@heroicons/react/24/solid';
+import { formatDate, shouldTruncateReview, truncateText } from '@/lib/utils';
+import Link from 'next/link';
 
-import {StarIcon, CalendarDaysIcon} from '@heroicons/react/24/outline'
-
-const review = {
-	id: 'rev-001',
-	rating: 5,
-	content:
-		'Absolutely amazing kitchen renovation! The team was professional, on time, and the results exceeded our expectations. Our new kitchen is the heart of our home now.',
-	date: '2025-08-22T14:30:00.000Z',
-	projectType: 'Kitchen Renovation',
-	reviewer: {
-		name: 'Sarah Johnson',
-		city: 'Vancouver',
-	},
+interface ReviewCardProps {
+  id: string;
+  className?: string;
+  body: string;
+  rating: number;
+  name: string | null;
+  date: string;
+  location: string | null;
+  job: string | null;
+  response?: string | null;
+  responseDate?: string | null;
 }
 
-function formatDate(dateStr: string) {
-	return new Date(dateStr).toLocaleDateString('en-US', {
-		year: 'numeric',
-		month: 'long',
-		day: 'numeric',
-	})
+function ReviewCard({
+  id,
+  className,
+  body,
+  rating,
+  name,
+  date,
+  location,
+  job,
+  response,
+  responseDate,
+}: ReviewCardProps) {
+  const needsTruncation = shouldTruncateReview(body, 50);
+  const displayText = needsTruncation ? truncateText(body, 50) : body;
+
+  return (
+    <article
+      className={cn(
+        'overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md',
+        className
+      )}
+    >
+      {/* Header Section */}
+      <header className="">
+        <div className="border-t border-gray-100 bg-gray-50 px-6 py-4">
+          {/* Reviewer */}
+          <div className="flex items-center justify-between">
+            {/* Reviewer Info */}
+            <div className="flex items-center gap-3">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600">
+                <span className="text-sm font-semibold text-white">
+                  {(name || 'H').charAt(0).toUpperCase()}
+                </span>
+              </div>
+              <div>
+                <p className="text-sm font-medium text-gray-900">
+                  {name || 'HomeOwner'}
+                </p>
+                {location && (
+                  <p className="text-xs text-gray-500">{location}</p>
+                )}
+              </div>
+            </div>
+
+            {/* Date */}
+            <time dateTime={date} className="text-sm text-gray-500">
+              {formatDate(date)}
+            </time>
+          </div>
+        </div>
+      </header>
+      <div className="space-y-1 px-6 py-4">
+        {/* Rating Stars */}
+        <div className="mt-3 flex items-center gap-1">
+          {Array.from({ length: rating / 2 }).map((_, i) => (
+            <StarIcon
+              key={i}
+              className={`h-4 w-4 ${
+                i < rating
+                  ? 'fill-current text-yellow-400'
+                  : 'fill-current text-gray-300'
+              }`}
+            />
+          ))}
+          <span className="ml-2 text-sm font-medium text-gray-700">
+            {rating / 2}/5
+          </span>
+        </div>
+        {/* Job Description */}
+        {job && (
+          <h2 className="mt-4 text-lg font-semibold text-pretty text-gray-700">
+            {job}
+          </h2>
+        )}
+        {/* Review Text */}
+        <div className="mb-4">
+          <p className="text-base leading-relaxed text-gray-800">
+            {displayText}
+            {needsTruncation && (
+              <>
+                {' '}
+                <Link
+                  href={`/reviews/${id}`}
+                  className="text-sm font-medium text-blue-600 underline transition-colors hover:text-blue-800 hover:no-underline"
+                >
+                  Read more
+                </Link>
+              </>
+            )}
+          </p>
+        </div>
+        {/* Source Link */}
+        <div className=" ">
+          <Link
+            href="https://www.homestars.com/profile/2780851-ncs-painting-design/reviews"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-xs text-gray-500 transition-colors hover:text-gray-700"
+          >
+            <svg
+              className="mr-1 h-3 w-3"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z"
+                clipRule="evenodd"
+              />
+            </svg>
+            Originally posted on HomeStars
+          </Link>
+        </div>
+      </div>
+      {/* Footer Section */}
+      <footer>
+        {/* Business Response */}
+        {response && responseDate && (
+          <div className="border-t border-blue-100 bg-blue-50 px-6 py-4">
+            <div className="flex gap-3">
+              <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-600">
+                <span className="text-xs font-semibold text-white">NCS</span>
+              </div>
+              <div className="flex-1">
+                <div className="mb-2 flex items-center gap-2">
+                  <span className="text-sm font-medium text-blue-900">
+                    Response from business
+                  </span>
+                  <time
+                    dateTime={responseDate}
+                    className="text-xs text-blue-600"
+                  >
+                    {formatDate(responseDate)}
+                  </time>
+                </div>
+                <p className="text-sm leading-relaxed text-blue-800">
+                  {response}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+      </footer>
+    </article>
+  );
 }
 
-// ⭐ Version 1: Classic Card
-export function ReviewCardV1() {
-	return (
-		<article className="bg-white rounded-2xl shadow-md p-6 max-w-md hover:shadow-lg transition">
-			<div className="flex items-center gap-1 mb-3">
-				{Array.from({length: 5}).map((_, i) => (
-					<StarIcon
-						key={i}
-						className={`h-5 w-5 ${
-							i < review.rating ? 'text-yellow-500 fill-yellow-500' : 'text-gray-300'
-						}`}
-					/>
-				))}
-			</div>
-			<p className="text-stone-700 text-sm leading-relaxed mb-4">{review.content}</p>
-			<div className="flex items-center justify-between text-sm text-stone-500 border-t pt-4">
-				<div>
-					<p className="font-medium text-stone-800">{review.reviewer.name}</p>
-					<p>{review.reviewer.city}</p>
-				</div>
-				<div className="text-right">
-					<span className="block text-xs">{formatDate(review.date)}</span>
-					<span className="bg-stone-100 text-stone-600 text-xs px-2 py-1 rounded-lg">
-						{review.projectType}
-					</span>
-				</div>
-			</div>
-		</article>
-	)
-}
-
-// ⭐ Version 2: Highlighted Header
-export function ReviewCardV2() {
-	return (
-		<article className="bg-gradient-to-br from-yellow-50 to-white border rounded-xl shadow-sm p-6 max-w-md">
-			<div className="flex items-center justify-between mb-4">
-				<h3 className="font-semibold text-stone-900">{review.projectType}</h3>
-				<time className="flex items-center gap-1 text-xs text-stone-500">
-					<CalendarDaysIcon className="h-4 w-4" />
-					{formatDate(review.date)}
-				</time>
-			</div>
-			<div className="flex items-center gap-1 mb-3">
-				{Array.from({length: 5}).map((_, i) => (
-					<StarIcon
-						key={i}
-						className={`h-4 w-4 ${
-							i < review.rating ? 'text-yellow-500 fill-yellow-500' : 'text-gray-300'
-						}`}
-					/>
-				))}
-			</div>
-			<p className="text-stone-700 text-sm leading-relaxed mb-4">{review.content}</p>
-			<p className="text-sm font-medium text-stone-800">
-				— {review.reviewer.name}, {review.reviewer.city}
-			</p>
-		</article>
-	)
-}
-
-// ⭐ Version 3: Minimalist w/ Top Date
-export function ReviewCardV3() {
-	return (
-		<article className="border border-stone-200 rounded-lg p-5 max-w-md bg-white">
-			<time className="block text-xs text-stone-400 mb-2 text-right">
-				{formatDate(review.date)}
-			</time>
-			<div className="flex items-center gap-1 mb-3">
-				{Array.from({length: 5}).map((_, i) => (
-					<StarIcon
-						key={i}
-						className={`h-4 w-4 ${
-							i < review.rating ? 'text-yellow-500 fill-yellow-500' : 'text-gray-300'
-						}`}
-					/>
-				))}
-			</div>
-			<p className="text-stone-700 text-sm leading-relaxed mb-4 italic">"{review.content}"</p>
-			<div className="flex justify-between text-sm">
-				<p className="font-medium text-stone-800">{review.reviewer.name}</p>
-				<span className="bg-stone-100 text-stone-600 text-xs px-2 py-1 rounded-md">
-					{review.projectType}
-				</span>
-			</div>
-		</article>
-	)
-}
-
-// ⭐ Version 4: Horizontal Layout
-export function ReviewCardV4() {
-	return (
-		<article className="flex gap-4 p-6 bg-white rounded-xl shadow-md max-w-2xl">
-			<div className="flex-shrink-0 flex flex-col items-center">
-				<div className="bg-yellow-100 text-yellow-700 rounded-full h-12 w-12 flex items-center justify-center font-bold">
-					{review.rating}★
-				</div>
-				<time className="mt-2 text-xs text-stone-400">{formatDate(review.date)}</time>
-			</div>
-			<div className="flex-1">
-				<h3 className="font-semibold text-stone-900 mb-1">{review.projectType}</h3>
-				<p className="text-stone-700 text-sm mb-3">{review.content}</p>
-				<p className="text-sm font-medium text-stone-800">
-					{review.reviewer.name}, {review.reviewer.city}
-				</p>
-			</div>
-		</article>
-	)
-}
-
-// ⭐ Version 5: Elegant Testimonial
-export function ReviewCardV5() {
-	return (
-		<article className="bg-stone-50 border border-stone-200 rounded-2xl p-6 max-w-md">
-			<blockquote className="text-stone-700 text-sm leading-relaxed mb-4">
-				“{review.content}”
-			</blockquote>
-			<div className="flex items-center justify-between">
-				<div>
-					<p className="font-medium text-stone-900">{review.reviewer.name}</p>
-					<p className="text-xs text-stone-500">{review.reviewer.city}</p>
-				</div>
-				<div className="text-right">
-					<div className="flex items-center gap-1 justify-end">
-						{Array.from({length: 5}).map((_, i) => (
-							<StarIcon
-								key={i}
-								className={`h-4 w-4 ${
-									i < review.rating ? 'text-yellow-500 fill-yellow-500' : 'text-gray-300'
-								}`}
-							/>
-						))}
-					</div>
-					<time className="text-xs text-stone-400 block mt-1">{formatDate(review.date)}</time>
-				</div>
-			</div>
-		</article>
-	)
-}
+export { ReviewCard };

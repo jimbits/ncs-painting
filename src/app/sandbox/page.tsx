@@ -1,16 +1,24 @@
-import { Metadata } from 'next'
-import Test from './Test'
+import { Metadata } from 'next';
+import { ReviewCard } from './ReviewCard';
+import type { Review } from './types';
+import reviewsData from './reviews.json';
+
 export const metadata: Metadata = {
-    title: 'Page Title',
-    description: 'Page description',
+  title: 'Reviews Page',
+  description: 'Page description',
+};
+
+async function PageName() {
+  const firstTenReviews: Review[] = reviewsData.slice(0, 10);
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="mb-4 text-2xl font-bold">Reviews Page</h1>
+
+      {firstTenReviews.map((review) => (
+        <ReviewCard key={review.id} {...review} />
+      ))}
+    </div>
+  );
 }
 
-export default function PageName() {
-    return (
-        <div className="container mx-auto px-4 py-8">
-            <h1 className="text-2xl font-bold mb-4">Page Title</h1>
-            <Test />
-      // Page content
-        </div>
-    )
-}
+export default PageName;

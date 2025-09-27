@@ -1,11 +1,12 @@
-import { lazy, Suspense } from "react";
-const OurServices = lazy(() => import("./sections/OurServices"));
-const Reviews = lazy(() => import("./sections/Reviews"));
-const Preview = lazy(() => import("./sections/Preview"));
-const Faqs = lazy(() => import("./sections/Faqs"));
-const SherwoodPark = lazy(() => import("./sections/SherwoodPark"));
-const FortSaskatchewan = lazy(() => import("./sections/FortSaskatchewan"));
-const StAlbert = lazy(() => import("./sections/StAlbert"));
+import { lazy, Suspense } from 'react';
+const OurServices = lazy(() => import('./sections/OurServices'));
+const Reviews = lazy(() => import('./sections/Reviews'));
+const Preview = lazy(() => import('./sections/Preview'));
+const Faqs = lazy(() => import('./sections/Faqs'));
+const SherwoodPark = lazy(() => import('./sections/SherwoodPark'));
+const FortSaskatchewan = lazy(() => import('./sections/FortSaskatchewan'));
+const StAlbert = lazy(() => import('./sections/StAlbert'));
+const Footer = lazy(() => import('./sections/Footer'));
 
 // Simple loading component
 const SectionLoader = () => (
@@ -43,6 +44,9 @@ export default function BelowTheFold() {
 
       <Suspense fallback={<SectionLoader />}>
         <StAlbert />
+      </Suspense>
+      <Suspense fallback={<SectionLoader />}>
+        <Footer />
       </Suspense>
     </>
   );

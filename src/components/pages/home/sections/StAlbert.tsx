@@ -16,7 +16,7 @@ const benefits = [
 
 export default function StAlbert() {
   return (
-    <div className="relative grid grid-cols-1 grid-rows-[auto] bg-white lg:grid-cols-2 lg:gap-8 dark:bg-gray-900">
+    <div className="relative mb-28 grid grid-cols-1 grid-rows-[auto] bg-white lg:grid-cols-2 lg:gap-8 dark:bg-gray-900">
       <div className="mx-4 max-w-full overflow-hidden rounded-xl lg:self-center">
         <img
           src="https://res.cloudinary.com/jimbits/image/upload/c_scale,f_auto,w_800/v1755899496/ncs-painting-edmonton/landing/banner_qjlpp1.jpg"
