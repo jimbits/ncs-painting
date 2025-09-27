@@ -70,18 +70,18 @@ function ReviewCard({
       <div className="space-y-1 px-6 py-4">
         {/* Rating Stars */}
         <div className="mt-3 flex items-center gap-1">
-          {Array.from({ length: rating / 2 }).map((_, i) => (
+          {Array.from({ length: 5 }).map((_, i) => (
             <StarIcon
               key={i}
               className={`h-4 w-4 ${
-                i < rating
+                i < Math.round(rating / 2)
                   ? 'fill-current text-yellow-400'
                   : 'fill-current text-gray-300'
               }`}
             />
           ))}
           <span className="ml-2 text-sm font-medium text-gray-700">
-            {rating / 2}/5
+            {Math.round(rating / 2)}/5
           </span>
         </div>
         {/* Job Description */}
@@ -98,7 +98,7 @@ function ReviewCard({
               <>
                 {' '}
                 <Link
-                  href={`/reviews/${id}`}
+                  href={`/reviews/review/${id}`}
                   className="text-sm font-medium text-blue-600 underline transition-colors hover:text-blue-800 hover:no-underline"
                 >
                   Read more

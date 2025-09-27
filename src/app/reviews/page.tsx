@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
-import { ReviewCard } from './ReviewCard';
+import { ReviewCard } from './components/ReviewCard';
 import type { Review } from './types';
-import reviewsData from './reviews.json';
+import reviewsData from '@/data/reviews.json';
 
 export const metadata: Metadata = {
   title: 'Reviews Page',
@@ -15,7 +15,7 @@ async function PageName() {
       <h1 className="mb-4 text-2xl font-bold">Reviews Page</h1>
 
       {firstTenReviews.map((review) => (
-        <ReviewCard key={review.id} {...review} />
+        <ReviewCard key={review.id} {...review} className="mb-4" />
       ))}
     </div>
   );

@@ -1,16 +1,18 @@
-import { type Metadata } from "next";
-import { defaultMetadata } from "./metadata/defaultMetadata";
-import { Geist, Geist_Mono } from "next/font/google";
-import "@/css/globals.css";
+import { type Metadata } from 'next';
+import { defaultMetadata } from './metadata/defaultMetadata';
+import { Geist, Geist_Mono } from 'next/font/google';
+import '@/css/globals.css';
+import { AppBar } from '@/components/navigation';
+import ResponsiveGuideBar from '@/lib/ResponsiveGuide';
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = defaultMetadata;
@@ -26,7 +28,11 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <head></head>
-      <body className=" ">{children}</body>
+      <body>
+        <ResponsiveGuideBar />
+        <AppBar />
+        {children}
+      </body>
     </html>
   );
 }
