@@ -3,8 +3,8 @@ import { defaultMetadata } from './metadata/defaultMetadata';
 import { Geist, Geist_Mono } from 'next/font/google';
 
 import { ResponsiveGuide } from '@/tools/responsive-guide';
-import '@/css/globals.css';
 import { AppBar } from '@/components/navigation';
+import '@/css/globals.css';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -31,8 +31,8 @@ export default function RootLayout({
       <head></head>
 
       <body>
-        <ResponsiveGuide visible={true} />
-        <AppBar />
+        {/* <ResponsiveGuide visible={true} /> */}
+        {/* <AppBar /> */}
         {children}
       </body>
     </html>
