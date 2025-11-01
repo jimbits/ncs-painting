@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
-import { ReactNode } from "react";
+import { cn } from '@/lib/utils';
+import { ReactNode } from 'react';
 
 interface QuoteFormProps {
   children?: ReactNode;
@@ -7,6 +7,7 @@ interface QuoteFormProps {
 }
 
 function QuoteForm({ className }: QuoteFormProps) {
+  const formData = new FormData();
   return (
     <section className="mx-auto max-w-lg lg:mx-0">
       {/* Header */}
@@ -47,12 +48,12 @@ function QuoteForm({ className }: QuoteFormProps) {
               name="firstName"
               value={formData.firstName}
               onChange={handleInputChange}
-              className={getInputClassName("firstName")}
+              className={getInputClassName('firstName')}
               placeholder="John"
               disabled={disabled || isSubmitting}
               autoComplete="given-name"
             />
-            {renderErrorMessage("firstName")}
+            {renderErrorMessage('firstName')}
           </div>
 
           <div>
@@ -68,12 +69,12 @@ function QuoteForm({ className }: QuoteFormProps) {
               name="lastName"
               value={formData.lastName}
               onChange={handleInputChange}
-              className={getInputClassName("lastName")}
+              className={getInputClassName('lastName')}
               placeholder="Doe"
               disabled={disabled || isSubmitting}
               autoComplete="family-name"
             />
-            {renderErrorMessage("lastName")}
+            {renderErrorMessage('lastName')}
           </div>
         </div>
 
@@ -91,12 +92,12 @@ function QuoteForm({ className }: QuoteFormProps) {
             name="email"
             value={formData.email}
             onChange={handleInputChange}
-            className={getInputClassName("email")}
+            className={getInputClassName('email')}
             placeholder="john.doe@example.com"
             disabled={disabled || isSubmitting}
             autoComplete="email"
           />
-          {renderErrorMessage("email")}
+          {renderErrorMessage('email')}
         </div>
 
         {/* Phone Field */}
@@ -113,12 +114,12 @@ function QuoteForm({ className }: QuoteFormProps) {
             name="phone"
             value={formData.phone}
             onChange={handleInputChange}
-            className={getInputClassName("phone")}
+            className={getInputClassName('phone')}
             placeholder="(555) 123-4567"
             disabled={disabled || isSubmitting}
             autoComplete="tel"
           />
-          {renderErrorMessage("phone")}
+          {renderErrorMessage('phone')}
         </div>
 
         {/* Project Description Field */}
@@ -135,11 +136,11 @@ function QuoteForm({ className }: QuoteFormProps) {
             value={formData.projectDescription}
             onChange={handleInputChange}
             rows={5}
-            className={`${getInputClassName("projectDescription")} resize-none`}
+            className={`${getInputClassName('projectDescription')} resize-none`}
             placeholder="Tell us about your painting project... Include details like room size, surface type, color preferences, timeline, and any specific requirements."
             disabled={disabled || isSubmitting}
           />
-          {renderErrorMessage("projectDescription")}
+          {renderErrorMessage('projectDescription')}
         </div>
 
         {/* Submit Button */}
@@ -150,8 +151,8 @@ function QuoteForm({ className }: QuoteFormProps) {
             disabled={disabled || isSubmitting}
             className={`w-full transform rounded-xl px-8 py-4 text-lg font-semibold text-white transition-all duration-200 ${
               disabled || isSubmitting
-                ? "cursor-not-allowed bg-slate-400"
-                : "bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg hover:scale-[1.02] hover:from-blue-700 hover:to-blue-800 hover:shadow-xl focus:ring-4 focus:ring-blue-500/30 focus:outline-none active:scale-[0.98]"
+                ? 'cursor-not-allowed bg-slate-400'
+                : 'bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg hover:scale-[1.02] hover:from-blue-700 hover:to-blue-800 hover:shadow-xl focus:ring-4 focus:ring-blue-500/30 focus:outline-none active:scale-[0.98]'
             }`}
           >
             {isSubmitting ? (

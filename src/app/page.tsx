@@ -1,4 +1,3 @@
-import { lazy, Suspense } from 'react';
 import { BelowTheFold } from '@/components/pages/home';
 import Hero from '@/components/pages/home/sections/Hero';
 import AboutUs from '@/components/pages/home/sections/AboutUs';

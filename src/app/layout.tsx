@@ -1,9 +1,10 @@
 import { type Metadata } from 'next';
 import { defaultMetadata } from './metadata/defaultMetadata';
 import { Geist, Geist_Mono } from 'next/font/google';
+
+import { ResponsiveGuide } from '@/tools/responsive-guide';
 import '@/css/globals.css';
 import { AppBar } from '@/components/navigation';
-import ResponsiveGuideBar from '@/lib/ResponsiveGuide';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -28,8 +29,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <head></head>
+
       <body>
-        <ResponsiveGuideBar />
+        <ResponsiveGuide visible={true} />
         <AppBar />
         {children}
       </body>
