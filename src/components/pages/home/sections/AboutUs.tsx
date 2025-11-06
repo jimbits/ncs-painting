@@ -1,6 +1,9 @@
 export default function AboutUs() {
   return (
-    <section id="about-us" className="relative overflow-hidden dark:bg-white">
+    <section
+      id="about-us"
+      className="relative mx-auto mt-8 max-w-7xl overflow-hidden md:max-w-[90%] dark:bg-white"
+    >
       <div className="py-24">
         <div className="overflow-hidden">
           <div
@@ -16,7 +19,7 @@ export default function AboutUs() {
             />
           </div>
         </div>
-        <div className="relative z-12 mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+        <div className="relative z-12">
           <div
             aria-hidden="true"
             className="absolute inset-x-0 top-0 -z-10 flex transform-gpu overflow-hidden pt-32 opacity-25 blur-3xl sm:pt-40 xl:justify-end"

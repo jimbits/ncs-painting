@@ -1,5 +1,5 @@
 import { BelowTheFold } from '@/components/pages/home';
-import Hero from '@/components/pages/home/sections/Hero';
+import { Hero } from '@/components/pages/home/sections/hero';
 import AboutUs from '@/components/pages/home/sections/AboutUs';
 
 export default function Home() {

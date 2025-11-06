@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "dev:clean": "run-s clean dev",
+    "dev:local": "next dev -H 0.0.0.0",
     "build": "next build --turbopack",
     "start": "next start",
     "clean": "rm -rf .next",
