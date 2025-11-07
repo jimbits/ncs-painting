@@ -31,7 +31,7 @@ export default function RootLayout({
       <head></head>
 
       <body>
-        <ResponsiveGuide visible={true} />
+        {/* <ResponsiveGuide visible={true} /> */}
         {/* <AppBar /> */}
         {children}
       </body>
