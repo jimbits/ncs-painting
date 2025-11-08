@@ -5,14 +5,14 @@ export default function Hero() {
   return (
     <>
       <header
-        className="mx-auto mt-8 max-w-7xl md:max-w-[90%]"
+        className="mx-auto mt-8 max-w-7xl px-4 md:max-w-[90%]"
         aria-label="NCS Painting Edmonton Hero Section"
       >
         {/* Left column */}
         <div>
           <div className="md:flex md:items-center md:justify-center">
             {/* Mobile Hero Image */}
-            <HeroImage className="hidden md:order-2 md:mx-0 md:block md:w-[40%]" />
+            <HeroImage className="hidden max-w-[580px] md:order-2 md:mx-0 md:block md:w-[40%]" />
 
             {/* Call to Action */}
             <div className="order-1 mt-8 max-w-[700px] md:w-[60%]">
@@ -30,7 +30,7 @@ export default function Hero() {
                   Saskatchewan
                 </h2>
 
-                <HeroImage className="order-2 mx-auto my-8 w-[55%] max-w-[520px] md:mx-0 md:hidden md:w-[40%]" />
+                <HeroImage className="order-2 mx-auto my-6 w-[65%] max-w-[520px] sm:w-[50%] md:mx-0 md:hidden md:w-[40%]" />
               </div>
 
               <div className="mb-4">
@@ -39,16 +39,16 @@ export default function Hero() {
                 </h3>
               </div>
 
-              <div className="mb-12 flex flex-row justify-center gap-4 text-sm md:justify-start lg:flex-row lg:text-base">
+              <div className="mb-12 flex flex-col items-center gap-4 text-center text-sm md:justify-start lg:flex-row lg:text-base">
                 <Link
                   href="/book-quote"
-                  className="block max-w-[289px] rounded-md bg-red-500 px-3.5 py-2.5 font-semibold text-white transition-colors hover:border-rose-700 hover:bg-rose-700 hover:text-white"
+                  className="block w-3/4 max-w-[289px] rounded-md bg-red-500 px-3.5 py-2.5 font-semibold text-white transition-colors hover:border-rose-700 hover:bg-rose-700 hover:text-white"
                 >
                   Book a Free Quote Online
                 </Link>
                 <Link
                   href="tel:+17807225577"
-                  className="block max-w-[289px] rounded-md border border-blue-500 px-3.5 py-2.5 font-semibold text-blue-500 transition-colors hover:bg-indigo-700 hover:text-white"
+                  className="block w-3/4 max-w-[289px] rounded-md border border-blue-500 px-3.5 py-2.5 font-semibold text-blue-500 transition-colors hover:bg-indigo-700 hover:text-white"
                 >
                   Call (780) 722-5577
                 </Link>
