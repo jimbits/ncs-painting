@@ -1,6 +1,9 @@
 'use server';
 
+import React from 'react';
+import { render } from '@react-email/components';
 import { resend, EMAIL_CONFIG } from '@/lib/email/resend';
+import QuoteConfirmationEmail from '@/emails/QuoteConfirmationEmails';
 import {
   quoteFormSchema,
   type QuoteFormData,
@@ -11,7 +14,10 @@ import {
 } from '@/lib/validations/quote-form-schema';
 
 /**
- * Server Action: Send quote request email via Resend
+ * Server Action: Send quote request emails via Resend
+ * Sends two emails:
+ * 1. Confirmation email to customer
+ * 2. Quote details email to Niall
  *
  * @param formData - The quote form data from the client
  * @returns Success or error response
@@ -21,27 +27,53 @@ export async function sendQuoteEmail(formData: QuoteFormData) {
     // Server-side validation with Zod
     const validatedData = quoteFormSchema.parse(formData);
 
-    // Format the email HTML content
-    const emailHtml = generateEmailHtml(validatedData);
+    // Send confirmation email to customer
+    const confirmationEmailHtml = render(
+      React.createElement(QuoteConfirmationEmail, {
+        customerName: validatedData.name,
+        formData: validatedData,
+      })
+    );
 
-    // Send email via Resend
-    const { data, error } = await resend.emails.send({
+    const confirmationResult = await resend.emails.send({
       from: EMAIL_CONFIG.from,
-      to: EMAIL_CONFIG.to,
-      replyTo: validatedData.email || EMAIL_CONFIG.replyTo, // Reply goes to customer if email provided
-      subject: `New Quote Request from ${validatedData.name}`,
-      html: emailHtml,
+      to: validatedData.email || validatedData.phone, // Should have email from validation, but fallback to phone
+      subject: 'We Received Your Quote Request - NCS Painting',
+      html: confirmationEmailHtml,
     });
 
-    if (error) {
-      console.error('Resend API error:', error);
+    if (confirmationResult.error) {
+      console.error(
+        'Failed to send confirmation email:',
+        confirmationResult.error
+      );
+      // Don't return here - still try to send admin email
+    }
+
+    // Generate admin email HTML
+    const adminEmailHtml = generateAdminEmailHtml(validatedData);
+
+    // Send quote details to admin (Niall)
+    const adminResult = await resend.emails.send({
+      from: EMAIL_CONFIG.from,
+      to: EMAIL_CONFIG.to,
+      replyTo: validatedData.email || EMAIL_CONFIG.replyTo,
+      subject: `New Quote Request from ${validatedData.name}`,
+      html: adminEmailHtml,
+    });
+
+    if (adminResult.error) {
+      console.error('Resend API error:', adminResult.error);
       return {
         success: false,
-        error: 'Failed to send email. Please try again.',
+        error: 'Failed to send quote request. Please try again.',
       };
     }
 
-    console.log('Email sent successfully:', data);
+    console.log('Emails sent successfully:', {
+      confirmation: confirmationResult.data,
+      admin: adminResult.data,
+    });
 
     return {
       success: true,
@@ -66,9 +98,9 @@ export async function sendQuoteEmail(formData: QuoteFormData) {
 }
 
 /**
- * Generate HTML email content from form data
+ * Generate HTML email content for admin (Niall) from form data
  */
-function generateEmailHtml(data: QuoteFormData): string {
+function generateAdminEmailHtml(data: QuoteFormData): string {
   const {
     name,
     email,
@@ -110,6 +142,12 @@ function generateEmailHtml(data: QuoteFormData): string {
       border-bottom: 3px solid #3498db;
       padding-bottom: 10px;
     }
+    h2 {
+      color: #2c3e50;
+      font-size: 18px;
+      margin-top: 24px;
+      margin-bottom: 16px;
+    }
     .section {
       margin-bottom: 20px;
     }
@@ -135,6 +173,10 @@ function generateEmailHtml(data: QuoteFormData): string {
       font-size: 12px;
       color: #777;
     }
+    a {
+      color: #3498db;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
@@ -149,14 +191,13 @@ function generateEmailHtml(data: QuoteFormData): string {
       <div class="value"><strong>${contactMethodLabels[preferredContactMethod]}</strong></div>
     </div>
 
+    <h2>Contact Information</h2>
     <div class="section">
-      <h2 style="color: #2c3e50; font-size: 18px;">Contact Information</h2>
-      
       ${
         email
           ? `
         <div class="label">Email:</div>
-        <div class="value"><a href="mailto:${email}" style="color: #3498db; text-decoration: none;">${email}</a></div>
+        <div class="value"><a href="mailto:${email}">${email}</a></div>
       `
           : ''
       }
@@ -165,15 +206,14 @@ function generateEmailHtml(data: QuoteFormData): string {
         phone
           ? `
         <div class="label">Phone:</div>
-        <div class="value"><a href="tel:${phone.replace(/[^\d]/g, '')}" style="color: #3498db; text-decoration: none;">${phone}</a></div>
+        <div class="value"><a href="tel:${phone.replace(/[^\d]/g, '')}">${phone}</a></div>
       `
           : ''
       }
     </div>
 
+    <h2>Project Details</h2>
     <div class="section">
-      <h2 style="color: #2c3e50; font-size: 18px;">Project Details</h2>
-      
       <div class="label">Service Type:</div>
       <div class="value">${serviceTypeLabels[serviceType]}</div>
       
@@ -199,18 +239,32 @@ function generateEmailHtml(data: QuoteFormData): string {
         projectDescription
           ? `
         <div class="label">Project Description:</div>
-        <div class="value" style="white-space: pre-wrap; background-color: #f9f9f9; padding: 10px; border-radius: 4px;">${projectDescription}</div>
+        <div class="value" style="white-space: pre-wrap; background-color: #f9f9f9; padding: 10px; border-radius: 4px;">${escapeHtml(projectDescription)}</div>
       `
           : ''
       }
     </div>
 
     <div class="footer">
-      <p>This quote request was submitted via the NCS Painting website contact form.</p>
-      <p style="margin: 0;">Timestamp: ${new Date().toLocaleString('en-US', { timeZone: 'America/Edmonton' })}</p>
+      <p><strong>Quick Reply:</strong> Use the reply button to respond directly to the customer.</p>
+      <p style="margin: 0;">Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Edmonton' })} (Mountain Time)</p>
     </div>
   </div>
 </body>
 </html>
   `.trim();
+}
+
+/**
+ * Escape HTML special characters to prevent injection
+ */
+function escapeHtml(text: string): string {
+  const map: { [key: string]: string } = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;',
+  };
+  return text.replace(/[&<>"']/g, (char) => map[char]);
 }

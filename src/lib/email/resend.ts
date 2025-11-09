@@ -9,7 +9,7 @@ export const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Email configuration
 export const EMAIL_CONFIG = {
-  from: 'NCS Painting <quotes@ncspainting.com>',
-  to: 'niall@ncspainting.com',
-  replyTo: 'niall@ncspainting.com',
+  from: 'NCS Painting <contact@ncspainting.com>',
+  to: 'niallsmith@ncspainting.com',
+  replyTo: 'niallsmith@ncspainting.com',
 } as const;
