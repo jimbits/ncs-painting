@@ -28,7 +28,7 @@ export async function sendQuoteEmail(formData: QuoteFormData) {
     const validatedData = quoteFormSchema.parse(formData);
 
     // Send confirmation email to customer
-    const confirmationEmailHtml = render(
+    const confirmationEmailHtml = await render(
       React.createElement(QuoteConfirmationEmail, {
         customerName: validatedData.name,
         formData: validatedData,

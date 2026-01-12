@@ -40,7 +40,7 @@ export const quoteFormSchema = z
       .string()
       .min(1, 'Name is required')
       .min(2, 'Name must be at least 2 characters')
-      .max(100, 'Name must be less than 100 characters'),
+      .max(60, 'Name must be less than 60 characters'),
 
     preferredContactMethod: contactMethodEnum,
 

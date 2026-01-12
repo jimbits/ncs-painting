@@ -32,7 +32,7 @@ export default function RootLayout({
 
       <body>
         <ResponsiveGuide visible={true} />
-        {/* <AppBar /> */}
+        <AppBar />
         {children}
       </body>
     </html>

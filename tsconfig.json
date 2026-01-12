@@ -29,7 +29,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "src/components/page-sections/home/get-quote/GetQuoteForm.tsx.old"
   ],
   "exclude": ["node_modules", "archives"]
 }

@@ -1,6 +1,10 @@
-import { BelowTheFold } from '@/components/pages/home';
-import { Hero } from '@/components/pages/home/sections/hero';
-import AboutUs from '@/components/pages/home/sections/AboutUs';
+import { Hero } from '@/components/page-sections/home/hero';
+import { AboutUs } from '@/components/page-sections/home/about-us';
+import { Faqs } from '@/components/page-sections/home/faq';
+import { OurServices } from '@/components/page-sections/home/services';
+import { GetFreeQuote } from '@/components/page-sections/home/get-quote';
+import { Footer } from '@/components/page-sections/home/footer';
+import Reviews from '@/components/page-sections/home/Reviews';
 
 export default function Home() {
   return (
@@ -9,7 +13,11 @@ export default function Home() {
       <AboutUs />
 
       <main>
-        <BelowTheFold />
+        <OurServices />
+        <GetFreeQuote />
+        <Reviews />
+        <Faqs />
+        <Footer />
       </main>
     </div>
   );

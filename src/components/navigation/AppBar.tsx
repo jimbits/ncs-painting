@@ -1,7 +1,9 @@
 'use client';
 import { cn } from '@/lib/utils';
 import { ReactNode } from 'react';
-import RollOnIcon from '@/icons/new.svg';
+import Test from 'public/Test';
+import NCSLogoBrand from '../branding/NCSLogo';
+import { NCSTextBrandLarge, NCSTextBrandSmall } from '../branding/NCSTextBrand';
 import { PrefersColorScheme } from '@/components/ui';
 import Response from '@/tools/responsive-guide/Response';
 
@@ -22,8 +24,13 @@ function AppBar({ className }: AppBarProps) {
   return (
     <div className={cn('px-2 pt-3 dark:bg-gray-900', className)}>
       <ul className={cn('flex items-center justify-between')}>
-        <li className=" ">
-          <RollOnIcon className="w-12 fill-slate-900 dark:fill-white" />
+        <li>
+          <figure className="flex">
+            <Test className="" />
+            <figcaption className="text-[10px] font-semibold tracking-wide text-stone-600">
+              Roll On Quality
+            </figcaption>
+          </figure>
         </li>
 
         <li className="flex items-center gap-3">

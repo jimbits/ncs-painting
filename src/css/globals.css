@@ -85,3 +85,71 @@ body {
     74.1% 44.1%
   );
 }
+
+/* ============================================
+   EXAMPLE COMPONENT (Your Original Card)
+   ============================================ */
+
+/* .box {
+  background-color: var(--color-blue-500);
+  height: 60px;
+} */
+.shape {
+  aspect-ratio: 2.257;
+  clip-path: shape(
+    from 0% 0%,
+    hline by 100%,
+    vline by 25.8%,
+    smooth by -50.22% 64.54% with -45.97% 59.77%,
+    smooth by -30.72% 0% with -13.35% 19.11%,
+    curve to 0% 63.11% with 1.7% 71.24%/0% 63.11%,
+    vline to 0%,
+    close
+  );
+}
+
+.bottom-shape {
+  aspect-ratio: 2.415;
+  clip-path: shape(
+    from 45% 90.4%,
+    curve by -27.21% 4.37% with -17.95% 16.68%,
+    curve to 0% 68.09% with 12.9% 87.07%/0% 68.09%,
+    vline to 0%,
+    hline by 100%,
+    vline by 27.43%
+  );
+}
+
+.foot {
+  clip-path: shape(
+    from 0% 100%,
+    hline by 110%,
+    vline by -40.24%,
+    smooth by -22.85% -28.76% with -10.46% -28.76%,
+    smooth by -33.72% 27.59% with -19.37% 3.43%,
+    curve by -43.4% 72.41% with -14.35% 24.17%/-43.4% 72.41%,
+    close
+  );
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: oklch(70.601% 0.14106 252.048);
+  position: absolute;
+  right: 0;
+  top: -2.5rem;
+  border: 8px solid white;
+}
+
+.rating {
+  display: flex;
+  list-style: none;
+  gap: 0.125rem;
+  width: fit-content;
+}
+.star {
+  color: rgb(252, 194, 6);
+  font-size: 1.125rem;
+}
